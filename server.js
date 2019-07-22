@@ -1,7 +1,4 @@
 
-
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -29,7 +26,7 @@ const { admin } = require('./middleware/admin');
 
 //==============USERS====================
 
-app.get('/api/users/auth', auth, (req,res)=>{
+app.get('/api/users/auth',auth, (req,res)=>{
   res.status(200).json({
       isAdmin: req.user.role === 0 ? false : true,
       isAuth: true,
