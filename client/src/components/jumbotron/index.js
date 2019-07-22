@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+
 function Jumbotron({ children }) {
   return (
     <div
@@ -9,11 +10,12 @@ function Jumbotron({ children }) {
         paddingTop: 120,
         textAlign: "center"
       }}
-      className="jumbotron"
+      className="jumbotron font_righteous"
     >
       {children}
     </div>
   );
+
 }
 
 export default Jumbotron;
