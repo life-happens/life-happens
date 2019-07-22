@@ -7,6 +7,7 @@ import Footer from "../components/header_footer/Footer";
 
 class Main extends Component {
 
+
     render() {
         return (
             <div>
@@ -14,12 +15,14 @@ class Main extends Component {
                 <Jumbotron>
                     <h1>Life Happens</h1>
                 </Jumbotron>
-                <About>
-                </About>
-                <Login></Login>
+                <About />
+     
+                <Login />
                 <Footer />
             </div>
         );
     }
 };
+
 export default Main;
+
