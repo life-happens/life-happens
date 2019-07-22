@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Main from "./pages/Main";
 
-import "./main.css";
-
 import Dashboard from "./pages/Dashboard";
-
+import EventTemp from "./pages/EventTemp";
+import "./main.css";
 
 function App() {
   return (
@@ -15,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/event" component={EventTemp} />
         </Switch>
       </div>
     </Router>
