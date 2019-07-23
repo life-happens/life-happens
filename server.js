@@ -10,7 +10,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE)
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -19,6 +19,9 @@ app.use(cookieParser());
 // ============= Models==============
 
 const{ User } = require('./models/user');
+
+// Event Model
+
 
 // ===========Middleware=============
 const { auth } = require('./middleware/auth');
