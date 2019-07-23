@@ -3,6 +3,7 @@ import Jumbotron from "../components/jumbotron/index";
 import Events from "../components/events/index";
 import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
+import Calendar from "../components/calendar";
 
 class Dashboard extends Component {
   render() {
@@ -14,6 +15,7 @@ class Dashboard extends Component {
         </Jumbotron>
 
         <Events />
+        <Calendar></Calendar>
 
         <Footer />
       </div>
