@@ -4,6 +4,7 @@ import About from "../components/about/index";
 import Login from "../components/login/index";
 import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
+import NavButtons from "../components/navButtons";
 
 class Main extends Component {
 
@@ -11,9 +12,14 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header>
+                    <NavButtons />
+                    </Header>
                 <Jumbotron>
+                    <div className="text_dark image">
                     <h1>Life Happens</h1>
+                    <h3>A customizable event template for the occassional host</h3>
+                    </div>
                 </Jumbotron>
                 <About />
      

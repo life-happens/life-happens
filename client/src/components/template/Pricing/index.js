@@ -7,11 +7,11 @@ class Pricing extends Component {
 
     state = {
         prices: [100, 150, 250],
-        positions: ["Balcony", "Medium", "Star"],
+        positions: ["Item 1", "Item 2", "Item 3"],
         desc: [
-            "Nose Bleed",
-            "Decent",
-            "Fantastic"
+            "Words",
+            "More Words",
+            "Most Words"
         ],
         linkto: ["http://sales/b", "http://sales/m", "http://sales/s"],
         delay: [500, 0, 500]

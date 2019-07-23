@@ -10,6 +10,7 @@ const Featured = () => {
             <div className="event_name">
                 <div className="wrapper">
                     {/* Pass in event name */}
+                    Your Next Event
                 </div>
             </div>
             <CountDown />

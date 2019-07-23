@@ -24,7 +24,7 @@ const VenueInfo = () => {
                                         Event Date & Time
                                 </div>
                                     <div className="vn_desc">
-                                        4 September 2019 @8:00 pm
+                                        Your Date
                                 </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@ const VenueInfo = () => {
                                         Event Location
                                 </div>
                                     <div className="vn_desc">
-                                       Istanbul, Santorini, & Crete
+                                      Your Venue
                                 </div>
                                 </div>
                             </div>

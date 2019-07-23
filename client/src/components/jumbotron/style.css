@@ -1,6 +1,9 @@
 
 .jumbotron{
-    background-color: #99d3df;
+    background: url("../../resources/images/main-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 600px;
 }
 
 body {
