@@ -7,14 +7,19 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3001;
-
 mongoose.Promise = global.Promise;
+mongoose.set('useCreateIndex', true)
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
+
+
+
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+
 
 // ============= Models==============
 
@@ -41,6 +46,7 @@ app.get('/api/users/auth',auth, (req,res)=>{
       history: req.user.history
 
   })
+  
 })
 
 app.post('/api/users/register',(req,res)=>{
@@ -89,7 +95,9 @@ app.get('/api/user/logout', auth,(req,res)=>{
   )
 })
 
+const port = process.env.PORT || 3002;
+
 // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.listen(port, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
 });
