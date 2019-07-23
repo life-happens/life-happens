@@ -34,6 +34,7 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main
+
   }
   
 }));
@@ -53,9 +54,12 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+
           
          <Register />
          
+
+          
         </div>
       </Grid>
     </Grid>
