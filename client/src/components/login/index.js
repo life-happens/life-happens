@@ -50,7 +50,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
+    backgroundColor:"#204969",
+    color:"#FFF7F7"
   }
 }));
 
@@ -100,7 +102,7 @@ export default function SignInSide() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              // color="primary"
               className={classes.submit}
             >
               Sign In
