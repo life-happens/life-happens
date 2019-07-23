@@ -6,6 +6,7 @@ import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
 import NavButtons from "../components/navButtons";
 
+
 class Main extends Component {
 
 
@@ -16,13 +17,13 @@ class Main extends Component {
                     <NavButtons />
                     </Header>
                 <Jumbotron>
-                    <div className="text_dark image">
+                    <div >
                     <h1>Life Happens</h1>
                     <h3>A customizable event template for the occassional host</h3>
                     </div>
                 </Jumbotron>
                 <About />
-     
+               
                 <Login />
                 <Footer />
             </div>

@@ -7,18 +7,18 @@ body {
 .font_righteous {
     font-family: 'Righteous', cursive;
 }
-.text_dark{
+/* .text_dark{
     color: #204969;
-}
+} */
 .bck_black {
     background: #2e2a2a;
 }
 .bck_white {
     background: #fff7f7;
 }
-.bck_dark {
+/* .bck_dark {
     background: #204969;
-}
+} */
 .bck_yellow {
     background: #dadada;
 }

@@ -46,7 +46,7 @@ class Header extends Component {
             <ToolBar>
                 <div className="header_logo">
                     <div className="font_righteous header_logo_venue">Life Happens</div>
-                    <div className="header_logo_title">Memorable Events</div>
+                    <div className="header_logo_title">One Event at a Time</div>
                 </div>
                 <IconButton
                     aria-label="Menu"
