@@ -1,35 +1,39 @@
-.howContainer {
-    padding-top: 50px;
-    height: auto;
-    width: 1500px;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 20px;
- justify-content: center; 
-    align-content: flex-start;
-    overflow: auto;
-    margin:auto;
-    background-color: brown
+ .howContainer {
+     padding-top: 50px; 
+     height: auto;
+    /* width: 1500px; */
+     display: flex;
+     flex-flow: row wrap; 
+    padding: 30px;
+   justify-content: center;  
+    /* align-content: flex-start; */
+    /* overflow: auto; */
+    /* margin:auto; */  
      
-};
+}; 
 h1{
     text-align: center;
     padding-bottom: 20px;
 };
- /* .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+ /* * .wrapper {
+     display: flex;
+    flex-wrap: wrap; */
+    /* justify-content: center;
     align-items: center;
-}; */
-.eventBox {
+    flex-flow: row wrap;
+    box-flex-group: left; */ 
+   
+/* };  */
+ .box {
     height:180px;
     width:200px;
     border-block-end-width:10px; 
     border-color: cadetblue;
-    margin: 1rem;
+    margin: 5rem;
     box-sizing: border-box;
     padding-block-end: 20px;
+    flex-grow: 1;
+    padding:2
 };
 .saleBox {
     height:180px;

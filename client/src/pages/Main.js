@@ -23,9 +23,10 @@ class Main extends Component {
                     </div>
                 </Jumbotron>
                 <About />
-                <Login />
+               
                 <Element name="how_it_works"></Element>
                 <HowItWorks/>
+                <Login />
                 <Footer />
             </div>
         );
