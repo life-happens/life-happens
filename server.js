@@ -7,18 +7,26 @@ const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3001;
-
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE)
+mongoose.set('useCreateIndex', true)
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
+
+
+
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+
 // ============= Models==============
 
 const{ User } = require('./models/user');
+
+// Event Model
+
 
 // ===========Middleware=============
 const { auth } = require('./middleware/auth');
@@ -33,11 +41,11 @@ app.get('/api/users/auth',auth, (req,res)=>{
       email: req.user.email,
       name: req.user.name,
       lastname: req.user.lastname,
-      role: req.user.role,
-      cart: req.user.cart,
-      history: req.user.history
+      role: req.user.role
+      
 
   })
+  
 })
 
 app.post('/api/users/register',(req,res)=>{
@@ -86,7 +94,9 @@ app.get('/api/user/logout', auth,(req,res)=>{
   )
 })
 
+const port = process.env.PORT || 3002;
+
 // Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+app.listen(port, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
 });
