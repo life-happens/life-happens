@@ -5,7 +5,7 @@ import Login from "../components/login/index";
 import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
 import NavButtons from "../components/navButtons";
-
+import HowItWorks from "../components/howitworks";
 class Main extends Component {
 
 
@@ -22,8 +22,8 @@ class Main extends Component {
                     </div>
                 </Jumbotron>
                 <About />
-     
                 <Login />
+                <HowItWorks/>
                 <Footer />
             </div>
         );
