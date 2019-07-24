@@ -5,6 +5,8 @@ import Login from "../components/login/index";
 import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
 import NavButtons from "../components/navButtons";
+import HowItWorks from "../components/howitworks";
+import { Element } from "react-scroll";
 
 
 class Main extends Component {
@@ -24,6 +26,10 @@ class Main extends Component {
                 </Jumbotron>
                 <About />
                
+
+                <Element name="how_it_works"></Element>
+                <HowItWorks/>
+
                 <Login />
                 <Footer />
             </div>
