@@ -7,7 +7,7 @@ import "./style.css"
  
 function HowItWorks() {
   return (
-    <div className="container">
+    <div className="howContainer">
       <h1 id="howHeader"> How it works </h1>
       {/* <div className="wrapper"> */}
         <div className="eventBox">
