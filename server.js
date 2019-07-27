@@ -97,9 +97,6 @@ app.get("/api/user/logout", auth, (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3002;
-
-// ===============Events============================
 
 // app.post('api/user/:event')
 
