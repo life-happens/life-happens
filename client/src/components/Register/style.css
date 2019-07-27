@@ -109,10 +109,10 @@ select {
   color: #204969;
   text-align: center;
   padding: 100px;
+}
 
-body{
-    background: #dadada;
-    
+body {
+    background: #dadada;  
 }
 input {
     font-size: 15px;
@@ -124,7 +124,7 @@ input {
     margin: 20px 0px 0px 0px;
 }
 
-button {
+.reg_button {
     cursor: pointer;
     text-transform: uppercase;
     padding: 10px;
