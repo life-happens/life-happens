@@ -5,7 +5,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import PageviewIcon from "@material-ui/icons/Pageview";
 import ShareIcon from "@material-ui/icons/Share";
 import EditIcon from "@material-ui/icons/Create";
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -21,30 +21,38 @@ export default function IconButtons() {
 
   return (
     <div>
-        <Tooltip title="Delete">
-      <IconButton className={classes.button} aria-label="Delete">
-        <DeleteIcon />
-      </IconButton>
+      <Tooltip title="Delete">
+        <IconButton className={classes.button} aria-label="Delete">
+          <DeleteIcon />
+        </IconButton>
       </Tooltip>
       <Tooltip title="View Page">
-      <IconButton
-        color="primary"
-        className={classes.button}
-        aria-label="Pageview"
-      >
-        <PageviewIcon />
-      </IconButton>
+        <IconButton
+          color="primary"
+          className={classes.button}
+          aria-label="Pageview"
+        >
+          <PageviewIcon />
+        </IconButton>
       </Tooltip>
       <Tooltip title="Edit">
-      <IconButton color="primary" className={classes.button} aria-label="Ceate">
-        <EditIcon />
-      </IconButton>
+        <IconButton
+          color="primary"
+          className={classes.button}
+          aria-label="Ceate"
+        >
+          <EditIcon />
+        </IconButton>
       </Tooltip>
 
       <Tooltip title="Share">
-      <IconButton color="primary" className={classes.button} aria-label="Share">
-        <ShareIcon />
-      </IconButton>
+        <IconButton
+          color="primary"
+          className={classes.button}
+          aria-label="Share"
+        >
+          <ShareIcon />
+        </IconButton>
       </Tooltip>
     </div>
   );
