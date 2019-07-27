@@ -1,21 +1,22 @@
-import React from 'react';
-import Calendar from 'react-calendar';
+import React from "react";
+import Calendar from "react-calendar";
 
-export default function myCalendar (){
-  
-//      state = {
-//          date: new Date(),
-//        }
-//   onChange = value => this.setState({ value })
+export default function myCalendar() {
+  //    state = {
+  //         date: new Date(),
+  //       }
+  //  onChange = value => this.setState({ value })
 
-//   render() {
-    //  const { value } = this.state;
+  //  render() {
+  //     const { value } = this.state;
 
-    return (
+  return (
+    <div id="calendar">
       <Calendar
-        //  onChange={this.onChange}
-        //  value={value}
+      // onChange={this.onChange}
+      // value={value}
       />
-     );
-  }
-//  }
+    </div>
+  );
+}
+// }

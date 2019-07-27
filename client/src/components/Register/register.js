@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 // import "./main.css";
 import Header from "../header_footer/Header";
@@ -221,6 +222,7 @@ render() {
         </div>
     );
 }
+
 }
 
 export default connect()(Register);

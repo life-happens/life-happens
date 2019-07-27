@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MyButton from '../utils/button';
 import Login from './login.js';
@@ -33,3 +34,4 @@ const RegisterLogin = () => {
 };
 
 export default RegisterLogin;
+

@@ -1,0 +1,15 @@
+.howContainer {
+  padding-top: 50px;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 30px;
+  justify-content: center;
+  background-color: #dadada;
+}
+
+#iconImage {
+  justify-content: right;
+  padding: 30px;
+  margin: 1rem;
+}
