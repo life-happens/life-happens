@@ -9,8 +9,8 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Register from '../Register';
 
+import Register from "../Register";
 
 
 const useStyles = makeStyles(theme => ({
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
     backgroundPosition: "center"
   },
   paper: {
-    margin: theme.spacing(8, 4),
+    margin: theme.spacing(8, 4, 0),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -54,12 +54,9 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-
-          
+    
          <Register />
-         
 
-          
         </div>
       </Grid>
     </Grid>

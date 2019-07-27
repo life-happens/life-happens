@@ -8,34 +8,36 @@ import NavButtons from "../components/navButtons";
 import HowItWorks from "../components/howitworks";
 import { Element } from "react-scroll";
 
+import Examples from "../components/examples";
 
 class Main extends Component {
+  render() {
+    return (
+      <div>
+        <Header>
+          <NavButtons />
+        </Header>
+        <Jumbotron>
+          <div>
+            <h1>Life Happens</h1>
+            <h3>A customizable event template for the occassional host</h3>
+          </div>
+        </Jumbotron>
+        <About />
+        <Element name="how_it_works">
+          <HowItWorks />
+        </Element>
+        <Element name="examples">
+          <Examples />
+        </Element>
+        <Element name="login">
+          <Login />
+        </Element>
+        <Footer />
+      </div>
+    );
+  }
+}
 
-
-    render() {
-        return (
-            <div>
-                <Header>
-                    <NavButtons />
-                    </Header>
-                <Jumbotron>
-                    <div >
-                    <h1>Life Happens</h1>
-                    <h3>A customizable event template for the occassional host</h3>
-                    </div>
-                </Jumbotron>
-                <About />
-               
-
-                <Element name="how_it_works"></Element>
-                <HowItWorks/>
-
-                <Login />
-                <Footer />
-            </div>
-        );
-    }
-};
 
 export default Main;
-
