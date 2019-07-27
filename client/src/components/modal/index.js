@@ -49,7 +49,7 @@ export default function SimpleModal() {
   return (
     <div className="wrapper">
       <div>
-        <button type="button" onClick={handleOpen}>
+        <button className="add_event_button"type="button" onClick={handleOpen}>
           Add Event
         </button>
       </div>

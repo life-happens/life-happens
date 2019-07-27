@@ -8,3 +8,16 @@
 .wrapper {
   text-align: center;
 }
+ 
+.add_event_button {
+  display: inherit;
+  margin-inline-start: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 10px;
+  background: #204969;
+  color: white;
+  margin-top: -70px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}

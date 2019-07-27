@@ -7,9 +7,11 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
+
 function Examples({ children }) {
   return (
     <div className="exampleContainer">
+      <br />
       <h1>Examples</h1>
       <Grid container justify="center">
         <Grid item xs={2}>
@@ -32,7 +34,9 @@ function Examples({ children }) {
           </Card>
         </Grid>
       </Grid>
+      <br />
     </div>
+    
   );
 }
 export default Examples;
