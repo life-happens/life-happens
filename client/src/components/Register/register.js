@@ -206,7 +206,7 @@ render() {
                                             Please check your data
                                         </div>
                                         : null}
-                                    <button onClick={(event) => this.submitForm(event)}>Create an Account</button>
+                                    <button className="reg_button" onClick={(event) => this.submitForm(event)}>Create an Account</button>
                                 </div>
                             </form>
                         </div>
