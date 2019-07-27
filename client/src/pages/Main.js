@@ -17,7 +17,7 @@ class Main extends Component {
                     <NavButtons />
                     </Header>
                 <Jumbotron>
-                    <div className="text_dark image">
+                    <div >
                     <h1>Life Happens</h1>
                     <h3>A customizable event template for the occassional host</h3>
                     </div>

@@ -1,8 +1,4 @@
 import React from "react";
-import IconButton from "@material-ui/core/IconButton";
-import EventIcon from "@material-ui/icons/Event";
- import MoneyIcon from "@material-ui/icons/AttachMoney";
-import GroupIcon from "@material-ui/icons/Group";
 import "./style.css";
  import Grid from "@material-ui/core/Grid";
  import { makeStyles } from '@material-ui/core/styles';
@@ -13,16 +9,17 @@ import "./style.css";
     flexGrow: 1,
   },
   card: {
-    height: 250,
+    height: 300,
     minWidth: 200,
-  },
-  control: {
     padding: theme.spacing(2),
+    justifyContent:"center",
   },
 }));
 
+
+
 function HowItWorks() {
-  const [spacing, setSpacing] = React.useState(2);
+  const [spacing] = React.useState(2);
   const classes = useStyles();
   return (
     <div className="howContainer">
@@ -32,25 +29,19 @@ function HowItWorks() {
       <Grid container justify="center" spacing={spacing}>
       <Grid item xs={2}>
       <Card className={classes.card}>
+          <i className="fas fa-calendar-day fa-7x"></i>
           <h2>Create an Event</h2>
-          <IconButton>
-            <EventIcon />
-          </IconButton>
         </Card>
        </Grid>
        <Grid item xs={2}>
         <Card className={classes.card}>
+          <i class="fas fa-dollar-sign fa-7x"></i>
           <h2>Add/Track Sales</h2>
-           <IconButton>
-            <MoneyIcon />
-          </IconButton>
         </Card>
         </Grid>
         <Grid item xs={2}>
         <Card className={classes.card}>
-          <IconButton>
-            <GroupIcon />
-          </IconButton>
+          <i class="fas fa-user-friends fa-7x"></i>
           <h2>Share</h2>
         </Card>
         </Grid>

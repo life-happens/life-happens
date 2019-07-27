@@ -12,6 +12,9 @@
     color:#ffffff;
     text-align: center;
 }
+.text_dark{
+    background: #204969;
+}
                       
 .vn_item .vn_outer {
     width: 300px;

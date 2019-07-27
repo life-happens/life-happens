@@ -5,7 +5,7 @@ import IconButtons from "../buttons"
 
 function Event({ children }) {
   return (
-    <div className="container">
+    <div className="event-container">
       <h2> My Events</h2>
       <SimpleModal />
       <IconButtons/>
