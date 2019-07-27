@@ -7,6 +7,7 @@ import Footer from "../components/header_footer/Footer";
 import NavButtons from "../components/navButtons";
 import HowItWorks from "../components/howitworks";
 import { Element } from "react-scroll";
+
 import Examples from "../components/examples";
 
 class Main extends Component {
@@ -37,5 +38,6 @@ class Main extends Component {
     );
   }
 }
+
 
 export default Main;

@@ -3,22 +3,29 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const app = express();
-const mongoose = require("mongoose");
-require("dotenv").config();
+
+const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.set("useCreateIndex", true);
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true)
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+
 
 // ============= Models==============
 
 const { User } = require("./models/user");
 
 // Event Model
+
+// Event Model
+
 
 // ===========Middleware=============
 const { auth } = require("./middleware/auth");
@@ -28,16 +35,20 @@ const { admin } = require("./middleware/admin");
 
 app.get("/api/users/auth", auth, (req, res) => {
   res.status(200).json({
-    isAdmin: req.user.role === 0 ? false : true,
-    isAuth: true,
-    email: req.user.email,
-    name: req.user.name,
-    lastname: req.user.lastname,
-    role: req.user.role
-  });
-});
 
-app.post("/api/users/register", (req, res) => {
+      isAdmin: req.user.role === 0 ? false : true,
+      isAuth: true,
+      email: req.user.email,
+      name: req.user.name,
+      lastname: req.user.lastname,
+      role: req.user.role
+      
+  })
+  
+})
+
+app.post('/api/users/register',(req,res)=>{
+
   const user = new User(req.body);
 
   user.save((err, doc) => {
@@ -85,6 +96,8 @@ app.get("/api/user/logout", auth, (req, res) => {
     });
   });
 });
+
+const port = process.env.PORT || 3002;
 
 const port = process.env.PORT || 3002;
 
