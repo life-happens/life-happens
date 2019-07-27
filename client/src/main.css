@@ -32,9 +32,7 @@ body {
   width: 900px;
   margin: 0 auto;
 }
-.reg_container {
-  background: "#204969";
-}
+
 .aboutContainer {
   text-align: center;
   height: 80vh;
@@ -54,5 +52,6 @@ h1 {
   background-color: #3c415e;
 }
 #calendar {
-  background-color: white;
+  /* background-color: white; */
+  color:black;
 }

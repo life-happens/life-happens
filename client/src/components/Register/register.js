@@ -190,7 +190,7 @@ class Register extends Component {
                     {this.state.formError ? (
                       <div className="error_label">Please check your data</div>
                     ) : null}
-                    <button onClick={event => this.submitForm(event)}>
+                    <button className="reg_button"onClick={event => this.submitForm(event)}>
                       Create an Account
                     </button>
                   </div>
