@@ -4,6 +4,7 @@ const SALT_I = 10;
 const jwt = require('jsonwebtoken')
 require('dotenv').config();
 
+
 const userSchema= mongoose.Schema({
     email:{
         type:String,
@@ -32,7 +33,16 @@ const userSchema= mongoose.Schema({
     },
     token:{
         type:String
-    }
+    },
+    events: [
+        {
+          // Store ObjectIds in the array
+          type: mongoose.Schema.Types.ObjectId,
+          // The ObjectIds will refer to the ids in the Note model
+          ref: "Event"
+        }
+      ]
+       
 
 });
 
@@ -86,5 +96,5 @@ userSchema.statics.findByToken = function(token, cb){
 }
 const User = mongoose.model('User', userSchema);
 
-module.exports = { User }
+module.exports = { User };
 
