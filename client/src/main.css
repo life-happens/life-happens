@@ -50,13 +50,19 @@ h1 {
   text-align: center;
 }
 .exampleContainer {
-  background-color: #3c415e;
+  background-color: #738598;
 }
-#calendar {
-  /* background-color: white; */
-  color:black;
-}
+
 /* .reg_container{
     background: #204969;
 } */
 
+.dash_Header {
+  text-align: center;
+  height: 100px;
+  background-color: white;
+  margin: 0;
+  color:#204969;
+  padding-top: 50px;
+  font-family: "Righteous", cursive;
+}
