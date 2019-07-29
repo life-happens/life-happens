@@ -21,7 +21,13 @@ const eventSchema = mongoose.Schema({
   },
   inspirationalPhoto: { 
     type: String 
-  }
+  },
+  tickets: [
+    {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tickets"
+    }
+]
  
 });
 

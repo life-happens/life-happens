@@ -36,11 +36,15 @@ const userSchema= mongoose.Schema({
     },
     events: [
         {
-          // Store ObjectIds in the array
           type: mongoose.Schema.Types.ObjectId,
-          // The ObjectIds will refer to the ids in the Note model
           ref: "Event"
         }
+      ],
+      profile: [
+          {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Profile"
+          }
       ]
        
 
