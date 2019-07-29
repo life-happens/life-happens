@@ -116,7 +116,14 @@ app.get("/api/user/logout", auth, (req, res) => {
   });
 
 // event get
-
+app.get('/api/users/events', auth, function(req, res) {
+  User.find(req.query)
+  .then(dbUser => 
+    Event.find(req.query)
+    .then(dbEvent => res.json(dbEvent))
+    )
+    .catch(err => res.status(422).json(err));
+});
 // ==========================Profile==========================
 
 // post

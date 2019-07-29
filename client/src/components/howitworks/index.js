@@ -33,13 +33,13 @@ function HowItWorks() {
           </Grid>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i class="fas fa-dollar-sign fa-7x" />
+              <i className="fas fa-dollar-sign fa-7x" />
               <h2>Add/Track Sales</h2>
             </Card>
           </Grid>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i class="fas fa-user-friends fa-7x" />
+              <i className="fas fa-user-friends fa-7x" />
               <h2>Share</h2>
             </Card>
           </Grid>
