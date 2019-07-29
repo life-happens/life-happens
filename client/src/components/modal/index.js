@@ -8,17 +8,11 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 250
-  },
-  dense: {
-    marginTop: 25
-  },
-  menu: {
     width: 250
   }
 }));
@@ -49,10 +43,11 @@ export default function SimpleModal() {
   return (
     <div className="wrapper">
       <div>
-        <button type="button" onClick={handleOpen}>
+        <button className="add_event_button"type="button" onClick={handleOpen}>
           Add Event
         </button>
       </div>
+      
       <Modal
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
@@ -60,6 +55,7 @@ export default function SimpleModal() {
         onClose={handleClose}
       >
         <div className="modalBackground">
+        <button onClick={handleClose} className="closeButton">X</button>
           <form className={classes.container} noValidate autoComplete="off">
             <div>
               <h2 id="header">Create Event</h2>
@@ -112,10 +108,9 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
+              <button className="submitEvent ">Submit</button>
             </div>
           </form>
-
-          <SimpleModal />
         </div>
       </Modal>
     </div>

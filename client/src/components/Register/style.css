@@ -108,12 +108,11 @@ select {
   font-size: 35px;
   color: #204969;
   text-align: center;
-  padding: 100px; 
+  padding: 100px;
 }
 
-body{
-    background: #dadada;
-    
+body {
+    background: #dadada;  
 }
 input {
     font-size: 15px;
