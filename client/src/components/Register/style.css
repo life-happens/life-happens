@@ -110,6 +110,12 @@ select {
   text-align: center;
   padding: 100px;
 }
+.dialog_sm {
+  font-size: 20px;
+  color: #204969;
+  text-align: center;
+  /* padding: 100px; */
+}
 
 body {
     background: #dadada;  

@@ -3,6 +3,7 @@ import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import "./style.css";
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -24,7 +25,7 @@ export default function SimpleModal() {
     date: "",
     location: "",
     description: "",
-    inspirationalImages: ""
+    inspirationalPhoto: ""
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -36,7 +37,31 @@ export default function SimpleModal() {
     setOpen(true);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(values);
+
+    axios.post('/api/users/event', {
+      name: values.eventName,
+      date: values.date,
+      location: values.location,
+      description: values.description,
+      inspirationalPhoto: values.inspirationalPhoto
+    }, {headers: {'Accept': 'application/json'}})
+    .then(function (response){
+      console.log(response);
+    })
+    .catch(function (error){
+      console.log(error);
+    });
+    
+    handleClose();
+  }
+
+
+
   const handleClose = () => {
+    setValues('');
     setOpen(false);
   };
 
@@ -65,8 +90,8 @@ export default function SimpleModal() {
                 id="outlined-name"
                 label=" Event Name"
                 className={classes.textField}
-                value={values.name}
-                onChange={handleChange("name")}
+                value={values.eventName}
+                onChange={handleChange("eventName")}
                 margin="normal"
                 variant="outlined"
               />
@@ -92,8 +117,8 @@ export default function SimpleModal() {
                 id="outlined-name"
                 label="Inspirational Images"
                 className={classes.textField}
-                value={values.inspirationalImages}
-                onChange={handleChange("inspirationalImages")}
+                value={values.inspirationalPhoto}
+                onChange={handleChange("inspirationalPhoto")}
                 margin="normal"
                 variant="outlined"
               />
@@ -108,7 +133,7 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
-              <button className="submitEvent ">Submit</button>
+              <button onClick={handleFormSubmit}className="submitEvent ">Submit</button>
             </div>
           </form>
         </div>

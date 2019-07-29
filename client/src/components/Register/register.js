@@ -123,7 +123,7 @@ class Register extends Component {
                         formSuccess: true
                     });
                     setTimeout(() => {
-                        this.props.history.push('/user/dashboard');
+                        this.props.history.push('/');
                     }, 3000);
                     
                 } else {
@@ -214,6 +214,7 @@ render() {
                 </div>
                 <Dialog open={this.state.formSuccess}>
                     <div className="dialog_reg">Welcome New User!</div>
+                    <div className="dialog_sm">Please Login to continue</div>
 
                 </Dialog>
             </div>
