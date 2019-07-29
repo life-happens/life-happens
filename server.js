@@ -23,7 +23,7 @@ app.use(cookieParser());
 const { User } = require("./models/user");
 
 // Event Model
-
+const { Event } = require("./models/event");
 // Event Model
 
 
@@ -96,12 +96,45 @@ app.get("/api/user/logout", auth, (req, res) => {
     });
   });
 });
+// =====================Events=========================
+
+  app.post("/api/users/event", function(req, res) {
+   
+    Event.create(req.body)
+      .then(function(dbEvent) {
+        
+        return User.findOneAndUpdate({}, { $push: { events: dbEvent._id } }, { new: true });
+      })
+      .then(function(dbEvent) {
+        
+        res.json(dbEvent);
+      })
+      .catch(function(err) {
+     
+        res.json(err);
+      });
+  });
+
+// event get
+
+// ==========================Profile==========================
+
+// post
+
+// get
+
+
+// ========================Tickets=============================
+
+// Post
+
+//  Get
 
 
 
-// app.post('api/user/:event')
 
 
+  
 const port = process.env.PORT || 3002;
 
 // Start the API server

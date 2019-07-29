@@ -105,7 +105,10 @@ class Login extends Component {
                             Please check your data
                         </div>
                     :null}
+
+
                     <button className="reg_button"onClick={(event)=> this.submitForm(event)}>Sign In</button>
+
                 </form>
                 
             </div>
