@@ -36,18 +36,18 @@ const { admin } = require("./middleware/admin");
 app.get("/api/users/auth", auth, (req, res) => {
   res.status(200).json({
 
-      isAdmin: req.user.role === 0 ? false : true,
-      isAuth: true,
-      email: req.user.email,
-      name: req.user.name,
-      lastname: req.user.lastname,
-      role: req.user.role
-      
+    isAdmin: req.user.role === 0 ? false : true,
+    isAuth: true,
+    email: req.user.email,
+    name: req.user.name,
+    lastname: req.user.lastname,
+    role: req.user.role
+
   })
-  
+
 })
 
-app.post('/api/users/register',(req,res)=>{
+app.post('/api/users/register', (req, res) => {
 
   const user = new User(req.body);
 
@@ -98,41 +98,52 @@ app.get("/api/user/logout", auth, (req, res) => {
 });
 // =====================Events=========================
 
-  app.post("/api/users/event", auth, function(req, res) {
-    console.log(req.user);
+app.post("/api/users/event", auth, function (req, res) {
+  console.log(req.user);
 
-    Event.create(req.body)
-      .then(function(dbEvent) {
-        
-        return User.findOneAndUpdate({_id: req.user._id}, { $push: { events: dbEvent._id } }, { new: true });
-      })
-      .then(function(dbEvent) {
-        
-        res.json(dbEvent);
-      })
-      .catch(function(err) {
-     
-        res.json(err);
-      });
-  });
+  Event.create(req.body)
+    .then(function (dbEvent) {
+
+      return User.findOneAndUpdate({ _id: req.user._id }, { $push: { events: dbEvent._id } }, { new: true });
+    })
+    .then(function (dbEvent) {
+
+      res.json(dbEvent);
+    })
+    .catch(function (err) {
+
+      res.json(err);
+    });
+});
 
 // event get
-app.get('/api/users/events', auth, function(req, res) {
-  User.find({_id: req.user._id})
-  .then(dbUser => {
-   
-    Event.find({_id: { $in: dbUser[0].events }})
-    .sort({ date: 1 })
-    .then(dbEvent => {
-      console.log(dbEvent);
-      res.json(dbEvent); 
+app.get('/api/users/events', auth, function (req, res) {
+  User.find({ _id: req.user._id })
+    .then(dbUser => {
+
+      Event.find({ _id: { $in: dbUser[0].events } })
+        .sort({ date: 1 })
+        .then(dbEvent => {
+         
+          res.json(dbEvent);
+        })
+
     })
-    
-  })
     .catch(err => res.status(422).json(err));
 });
 
 // event Delete
+app.get('/api/users/events/:id', auth, function (req, res) {
+
+  
+  Event.findById({ _id: req.params.id })
+   .then(dbModel => {dbModel.remove()})
+    .then(dbModel => res.json(dbModel))
+   .catch(err => res.status(422).json(err));
+
+});
+
+
 
 // ==========================Profile==========================
 
@@ -151,10 +162,10 @@ app.get('/api/users/events', auth, function(req, res) {
 
 
 
-  
+
 const port = process.env.PORT || 3002;
 
 // Start the API server
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${port}!`);
 });

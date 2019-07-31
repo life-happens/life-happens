@@ -6,7 +6,7 @@ import PageviewIcon from "@material-ui/icons/Pageview";
 import ShareIcon from "@material-ui/icons/Share";
 import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
-// import axios from "axios";
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -27,8 +27,17 @@ export default function IconButtons(props) {
   
   const deleteEvent = () => {
     console.log(props.id);
+
+    axios.get("/api/users/events/" + props.id )
+    .then(res => {
+      
+      // props.onClick(res);
+  })
+
     // pass in event id 
     // axios call to delete from db
+
+    
   }
 
   const updateEvent = () => {
