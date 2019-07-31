@@ -18,7 +18,7 @@ constructor(props) {
             })
     }
 
-   
+//    Figure out how to make render when item added to db
 
     
 
@@ -32,6 +32,7 @@ constructor(props) {
                     className="event_buttons"
                     key={event._id}
                     id={event._id}
+                    
 
                     
                      />
