@@ -6,7 +6,7 @@ import PageviewIcon from "@material-ui/icons/Pageview";
 import ShareIcon from "@material-ui/icons/Share";
 import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
-// import axios from "axios";
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -24,10 +24,38 @@ const useStyles = makeStyles(theme => ({
 export default function IconButtons(props) {
   const classes = useStyles();
   // console.log(props.id);
+  
   const deleteEvent = () => {
     console.log(props.id);
+
+    axios.get("/api/users/events/" + props.id )
+    .then(res => {
+      
+      // props.onClick(res);
+  })
+
     // pass in event id 
     // axios call to delete from db
+
+    
+  }
+
+  const updateEvent = () => {
+    console.log(props.id);
+    // pass in event id 
+
+    // axios call to display & update from db
+  }
+  const goToEvent = () => {
+    console.log(props.id);
+     // pass in event id 
+    //route to filled out event template
+  }
+
+  const shareEvent = () => {
+    console.log(props.id) 
+
+    // Use react-share to capture url of shareable webpage and share on social media
   }
 
   return (
@@ -46,6 +74,7 @@ export default function IconButtons(props) {
           color="primary"
           className={classes.button}
           aria-label="Pageview"
+          onClick={goToEvent}
         >
           <PageviewIcon />
         </IconButton>
@@ -55,6 +84,7 @@ export default function IconButtons(props) {
           color="primary"
           className={classes.button}
           aria-label="Create"
+          onClick={updateEvent}
         >
           <EditIcon />
         </IconButton>
@@ -65,6 +95,7 @@ export default function IconButtons(props) {
           color="primary"
           className={classes.button}
           aria-label="Share"
+          onClick={shareEvent}
         >
           <ShareIcon />
         </IconButton>

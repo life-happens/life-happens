@@ -22,8 +22,8 @@ class EventTemp extends Component {
     image: ["https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
     discDate: "Oct 29, 2019",
     percentOff: 25,
-    ticketPrice: 500,
-    ticketTitle: "Balcony Seats"
+    ticketPrice: [500],
+    ticketTitle: ["Balcony Seats"]
 }
 
 
