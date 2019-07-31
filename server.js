@@ -98,12 +98,13 @@ app.get("/api/user/logout", auth, (req, res) => {
 });
 // =====================Events=========================
 
-  app.post("/api/users/event", function(req, res) {
-   
+  app.post("/api/users/event", auth, function(req, res) {
+    console.log(req.user);
+
     Event.create(req.body)
       .then(function(dbEvent) {
         
-        return User.findOneAndUpdate({}, { $push: { events: dbEvent._id } }, { new: true });
+        return User.findOneAndUpdate({_id: req.user._id}, { $push: { events: dbEvent._id } }, { new: true });
       })
       .then(function(dbEvent) {
         
@@ -117,13 +118,22 @@ app.get("/api/user/logout", auth, (req, res) => {
 
 // event get
 app.get('/api/users/events', auth, function(req, res) {
-  User.find(req.query)
-  .then(dbUser => 
-    Event.find(req.query)
-    .then(dbEvent => res.json(dbEvent))
-    )
+  User.find({_id: req.user._id})
+  .then(dbUser => {
+   
+    Event.find({_id: { $in: dbUser[0].events }})
+    .sort({ date: 1 })
+    .then(dbEvent => {
+      console.log(dbEvent);
+      res.json(dbEvent); 
+    })
+    
+  })
     .catch(err => res.status(422).json(err));
 });
+
+// event Delete
+
 // ==========================Profile==========================
 
 // post

@@ -2,9 +2,9 @@ import React from 'react';
 import Slider from "react-slick";
 import slide_one from "../../../resources/images/slide_one.jpg";
 import slide_two from "../../../resources/images/slide_two.jpg";
-import slide_three from "../../../resources/images/slide_three.jpg";
+// import slide_three from "../../../resources/images/slide_three.jpg";
 
-const Carrousel = () => {
+const Carrousel = (props) => {
 
     var settings = {
         dots: false,
@@ -54,7 +54,7 @@ const Carrousel = () => {
                     <div
                         className="carrousel_image"
                         style={{
-                            background: `url(${slide_three})`,
+                            background: `url(${props.image[0]})`,
                             height: `${window.innerHeight}px`
                         }}
                     >

@@ -4,7 +4,7 @@ import icon_location from "../../../resources/images/icons/location.png";
 import "./style.css";
 import Zoom from 'react-reveal/Zoom';
 
-const VenueInfo = () => {
+const VenueInfo = (props) => {
     return (
 
         <div className="bck_black">
@@ -24,7 +24,7 @@ const VenueInfo = () => {
                                         Event Date & Time
                                 </div>
                                     <div className="vn_desc">
-                                        Your Date
+                                        {props.date}
                                 </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@ const VenueInfo = () => {
                                         Event Location
                                 </div>
                                     <div className="vn_desc">
-                                      Your Venue
+                                      {props.location}
                                 </div>
                                 </div>
                             </div>

@@ -20,7 +20,7 @@ class Main extends Component {
         <Jumbotron>
           <div>
             <h1>Life Happens</h1>
-            <h3>A customizable event template for the occassional host</h3>
+            <h3>An event template customization and ticketing site for the occasional entrepreneur.</h3>
           </div>
         </Jumbotron>
         <About />

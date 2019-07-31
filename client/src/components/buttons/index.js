@@ -6,6 +6,7 @@ import PageviewIcon from "@material-ui/icons/Pageview";
 import ShareIcon from "@material-ui/icons/Share";
 import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
+// import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -16,13 +17,27 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function IconButtons() {
+
+
+
+
+export default function IconButtons(props) {
   const classes = useStyles();
+  // console.log(props.id);
+  const deleteEvent = () => {
+    console.log(props.id);
+    // pass in event id 
+    // axios call to delete from db
+  }
 
   return (
     <div>
       <Tooltip title="Delete">
-        <IconButton className={classes.button} aria-label="Delete">
+        <IconButton 
+        className={classes.button} 
+        onClick={deleteEvent}  
+        aria-label="Delete"
+        >
           <DeleteIcon />
         </IconButton>
       </Tooltip>
@@ -39,7 +54,7 @@ export default function IconButtons() {
         <IconButton
           color="primary"
           className={classes.button}
-          aria-label="Ceate"
+          aria-label="Create"
         >
           <EditIcon />
         </IconButton>

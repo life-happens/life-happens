@@ -5,8 +5,9 @@ import "./style.css";
 
 class Pricing extends Component {
 
+    
     state = {
-        prices: [100, 150, 250],
+        prices: [100, 175, 250],
         positions: ["Item 1", "Item 2", "Item 3"],
         desc: [
             "Words",
@@ -60,5 +61,6 @@ class Pricing extends Component {
         );
     }
 }
+
 
 export default Pricing;
