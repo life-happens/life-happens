@@ -1,13 +1,13 @@
 import React from 'react';
 import Fade from "react-reveal/Fade";
 
-const Description = () => {
+const Description = (props) => {
     return (
         <Fade>
             <div className="center_wrapper">
                 <h2>Highlights</h2>
                 <div className="highlight_description">
-                Pass in information about the event.
+                {props.description}
                 </div>
             </div>
         </Fade>

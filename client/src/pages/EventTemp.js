@@ -10,21 +10,40 @@ import Location from "../components/template/Location";
 import Footer from "../components/header_footer/Footer";
 
 class EventTemp extends Component {
+
+// Query DB with specific _id and Change state with db information
+
+  state = {
+
+    date: "Nov, 4, 2019",
+    description: "All the Words",
+    location: "Here",
+    eventName: "YOUR AWESOME EVENT",
+    image: ["https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
+    discDate: "Oct 29, 2019",
+    percentOff: 25,
+    ticketPrice: 500,
+    ticketTitle: "Balcony Seats"
+}
+
+
+
+
   render() {
     return (
       <div className="App" style={{ height: "1600px" }}>
         <Header />
         <Element name="featured">
-          <Featured />
+          <Featured eventName={this.state.eventName} image={this.state.image} date={this.state.date} />
         </Element>
         <Element name="venue_info">
-          <VenueInfo />
+          <VenueInfo date={this.state.date} location={this.state.location} />
         </Element>
         <Element name="highlight">
-          <Highlights />
+          <Highlights description={this.state.description} discDate={this.state.discDate} percentOff={this.state.percentOff} />
         </Element>
         <Element name="pricing">
-          <Pricing />
+            <Pricing ticketTitle={this.state.ticketTitle} ticketPrice={this.state.ticketPrice} />
         </Element>
         <Element name="location">
           <Location />

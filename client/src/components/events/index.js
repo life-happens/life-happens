@@ -15,7 +15,7 @@ import EventList from './eventList';
 function Event({ children }) {
   return (
     <Grid container justify="center">
-    <Grid item xs={3}>
+    <Grid item xs={4}>
     {/* <div className="event-container"> */}
       <h2 className="eventHeader"> My  Events</h2>
       

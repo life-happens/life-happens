@@ -63,6 +63,7 @@ export default function SimpleModal() {
   const handleClose = () => {
     setValues('');
     setOpen(false);
+
   };
 
   return (

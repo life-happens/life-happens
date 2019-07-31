@@ -3,14 +3,15 @@ import Carrousel from "./Carrousel";
 import CountDown from "./CountDown";
 import "./style.css";
 
-const Featured = () => {
+const Featured = (props) => {
     return (
         <div style={{position: 'relative'}}>
-            <Carrousel />
+            <Carrousel image={props.image} />
             <div className="event_name">
                 <div className="wrapper">
-                    {/* Pass in event name */}
-                    Your Next Event
+                    {props.eventName}
+                    
+                    
                 </div>
             </div>
             <CountDown />

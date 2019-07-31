@@ -122,6 +122,7 @@ app.get('/api/users/events', auth, function(req, res) {
   .then(dbUser => {
    
     Event.find({_id: { $in: dbUser[0].events }})
+    .sort({ date: 1 })
     .then(dbEvent => {
       console.log(dbEvent);
       res.json(dbEvent); 
@@ -130,6 +131,9 @@ app.get('/api/users/events', auth, function(req, res) {
   })
     .catch(err => res.status(422).json(err));
 });
+
+// event Delete
+
 // ==========================Profile==========================
 
 // post
