@@ -8,12 +8,20 @@ import Highlights from "../components/template/highlights";
 import Pricing from "../components/template/Pricing";
 import Location from "../components/template/Location";
 import Footer from "../components/header_footer/Footer";
+ import axios from "axios";
+
 
 class EventTemp extends Component {
+  constructor(props) {
+    super(props)
 
+    console.log(props.location.pathname)
+
+    
+  
 // Query DB with specific _id and Change state with db information
 
-  state = {
+  this.state = {
 
     date: "Nov, 4, 2019",
     description: "All the Words",
@@ -26,8 +34,36 @@ class EventTemp extends Component {
     ticketTitle: ["Balcony Seats"]
 }
 
+}
+componentDidMount(){
+ 
+console.log(this)
 
+var url = this.props.location.pathname;
+  var id = url.substring(url.lastIndexOf('/') + 1);
+ console.log(id);
 
+  axios.get("/api/users/events/",{
+    params: {
+      ID: id
+    }
+  } )
+  .then(res => {
+    console.log(res);
+    const event = res.data[0]
+    this.setState({ 
+      eventName: event.name, 
+      date: event.date,
+      description: event.description,
+      location: event.location,
+      // image: event.inspirationalPhoto,
+      discDate: "Oct 29, 2019",
+      percentOff: 25,
+      ticketPrice: [500],
+      ticketTitle: ["Balcony Seats"]
+    });
+  })
+}
 
   render() {
     return (

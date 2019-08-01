@@ -39,7 +39,7 @@ export default function SimpleModal() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(values);
+    console.log( values);
 
     axios.post('/api/users/event', {
       name: values.eventName,
@@ -50,6 +50,8 @@ export default function SimpleModal() {
     }, {headers: {'Accept': 'application/json'}})
     .then(function (response){
       console.log(response);
+      
+
     })
     .catch(function (error){
       console.log(error);
@@ -62,7 +64,9 @@ export default function SimpleModal() {
 
   const handleClose = () => {
     setValues('');
+    window.location.reload();
     setOpen(false);
+    
 
   };
 

@@ -10,7 +10,7 @@ const VenueInfo = (props) => {
         <div className="bck_black">
             <div className="center_wrapper">
                 <div className="vn_wrapper">
-                    <Zoom duration="500">
+                    <Zoom duration= {500}>
                         <div className="vn_item">
                             <div className="vn_outer">
                                 <div className="vn_inner">
@@ -32,7 +32,7 @@ const VenueInfo = (props) => {
                     </Zoom>
 
 
-                    <Zoom duration="500" delay="500">
+                    <Zoom duration={500} delay={500}>
                         <div className="vn_item">
                             <div className="vn_outer">
                                 <div className="vn_inner">

@@ -144,7 +144,15 @@ app.get('/api/users/events/:id', auth, function (req, res) {
 });
 
 
+// app.get('/user/event/page/:id', function (req, res) {
 
+//   console.log(req)
+//   Event.findById({ _id: req.params.id })
+   
+//     .then(dbModel => res.json(dbModel))
+//    .catch(err => res.status(422).json(err));
+
+// });
 // ==========================Profile==========================
 
 // post

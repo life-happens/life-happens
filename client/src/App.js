@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/" component={Main} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/user/dashboard" component={Dashboard} />
-          <Route exact path="/user/event" component={EventTemp} />
+          <Route exact path="/user/event/page/:id" component={EventTemp} />
         </Switch>
       </div>
     </Router>
