@@ -3,8 +3,11 @@ import icon_calendar from "../../../resources/images/icons/calendar.png";
 import icon_location from "../../../resources/images/icons/location.png";
 import "./style.css";
 import Zoom from 'react-reveal/Zoom';
+import moment from "moment";
 
 const VenueInfo = (props) => {
+ 
+
     return (
 
         <div className="bck_black">
@@ -24,7 +27,7 @@ const VenueInfo = (props) => {
                                         Event Date & Time
                                 </div>
                                     <div className="vn_desc">
-                                        {props.date}
+                                        {moment(props.date).format('MMMM Do, YYYY')}
                                 </div>
                                 </div>
                             </div>

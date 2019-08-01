@@ -45,7 +45,7 @@ var url = this.props.location.pathname;
 
   axios.get("/api/users/events/",{
     params: {
-      ID: id
+      _id: id
     }
   } )
   .then(res => {
@@ -56,7 +56,7 @@ var url = this.props.location.pathname;
       date: event.date,
       description: event.description,
       location: event.location,
-      // image: event.inspirationalPhoto,
+      image: event.inspirationalPhoto,
       discDate: "Oct 29, 2019",
       percentOff: 25,
       ticketPrice: [500],

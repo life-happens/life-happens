@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import Slide from 'react-reveal/Slide';
 
 class CountDown extends Component {
+    constructor(props) {
+        super(props);
+      
     
-        state = {
+        this.state = {
 
             // Replace this date with passed in date
             deadline: "Sept, 4, 2019",
@@ -12,6 +15,7 @@ class CountDown extends Component {
             minutes: 0,
             seconds: 0
         }
+    }
         getTimeUntil(deadline){
             const time = Date.parse(deadline) - Date.parse(new Date());
             if (time < 0) {
@@ -33,7 +37,8 @@ class CountDown extends Component {
         }
 
         componentDidMount(){
-            setInterval(() => this.getTimeUntil(this.state.deadline), 1000)
+           setInterval(() => this.getTimeUntil(this.state.deadline), 1000)
+            
         }
         render() {
             return (

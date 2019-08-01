@@ -25,7 +25,11 @@ export default function SimpleModal() {
     date: "",
     location: "",
     description: "",
-    inspirationalPhoto: ""
+    inspirationalPhoto: [],
+    discDate: "",
+    percentOff: "",
+    ticketPrice: [],
+    ticketTitle: []
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -46,7 +50,9 @@ export default function SimpleModal() {
       date: values.date,
       location: values.location,
       description: values.description,
-      inspirationalPhoto: values.inspirationalPhoto
+      inspirationalPhoto: [values.inspirationalPhoto],
+      ticketPrice: values.ticketPrice,
+      ticketTitle: values.ticketTitle
     }, {headers: {'Accept': 'application/json'}})
     .then(function (response){
       console.log(response);
@@ -120,10 +126,29 @@ export default function SimpleModal() {
               />
               <TextField
                 id="outlined-name"
+                label="Ticket Title"
+                className={classes.textField}
+                value={values.ticketTitle}
+                onChange={handleChange("ticketTitle")}
+                margin="normal"
+                variant="outlined"
+              />
+             
+              <TextField
+                id="outlined-name"
                 label="Inspirational Images"
                 className={classes.textField}
                 value={values.inspirationalPhoto}
                 onChange={handleChange("inspirationalPhoto")}
+                margin="normal"
+                variant="outlined"
+              />
+                <TextField
+                id="outlined-name"
+                label="Ticket Price"
+                className={classes.textField}
+                value={values.ticketPrice}
+                onChange={handleChange("ticketPrice")}
                 margin="normal"
                 variant="outlined"
               />
