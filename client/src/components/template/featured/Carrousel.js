@@ -1,16 +1,16 @@
 import React from 'react';
 import Slider from "react-slick";
-import slide_one from "../../../resources/images/slide_one.jpg";
-import slide_two from "../../../resources/images/slide_two.jpg";
+// import slide_one from "../../../resources/images/slide_one.jpg";
+// import slide_two from "../../../resources/images/slide_two.jpg";
 // import slide_three from "../../../resources/images/slide_three.jpg";
 
 const Carrousel = (props) => {
-
+console.log(props)
     var settings = {
         dots: false,
         infinite: true,
         autoplay: true,
-        speed: 600, 
+        speed: 800, 
         arrows: false
         
        
@@ -32,14 +32,14 @@ const Carrousel = (props) => {
                     <div
                         className="carrousel_image"
                         style={{
-                            background: `url(${slide_one})`,
+                            background: `url(${props.image[1]})`,
                             height: `${window.innerHeight}px`
                         }}
                     >
 
                     </div>
                 </div>
-                <div>
+                {/* <div>
                     <div
                         className="carrousel_image"
                         style={{
@@ -49,7 +49,7 @@ const Carrousel = (props) => {
                     >
 
                     </div>
-                </div>
+                </div> */}
                 <div>
                     <div
                         className="carrousel_image"

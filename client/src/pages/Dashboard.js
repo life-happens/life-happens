@@ -4,16 +4,18 @@ import Footer from "../components/header_footer/Footer";
 
 
 
+
 class Dashboard extends Component {
   render() {
     return (
       <div>
-         <h1 className="dash_Header">Dashboard</h1>
+        <h1 className="dash_Header">Dashboard</h1>
+
         <Events />
         <Footer />
       </div>
-    );
-  }
-}
-
-export default Dashboard;
+        );
+      }
+    }
+    
+    export default Dashboard;

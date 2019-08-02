@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/jumbotron/index";
-import About from "../components/about/index";
+// import About from "../components/about/index";
 import Login from "../components/login/index";
 import Header from "../components/header_footer/Header";
 import Footer from "../components/header_footer/Footer";
@@ -23,7 +23,7 @@ class Main extends Component {
             <h3>An event template customization and ticketing site for the occasional entrepreneur.</h3>
           </div>
         </Jumbotron>
-        <About />
+        {/* <About /> */}
         <Element name="how_it_works">
           <HowItWorks />
         </Element>

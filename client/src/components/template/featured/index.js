@@ -14,7 +14,7 @@ const Featured = (props) => {
                     
                 </div>
             </div>
-            <CountDown />
+            <CountDown date={props.date}/>
         </div>
     );
 };

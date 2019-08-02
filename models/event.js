@@ -11,7 +11,14 @@ const eventSchema = mongoose.Schema({
     type: Date, 
     required: true 
   },
+  time: {
+    type: String
+  },
   location: { 
+    type: String, 
+    required: true 
+  },
+  address: { 
     type: String, 
     required: true 
   },
@@ -20,14 +27,14 @@ const eventSchema = mongoose.Schema({
     required: true 
   },
   inspirationalPhoto: { 
-    type: String 
+    type: Array 
   },
-  tickets: [
-    {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Tickets"
-    }
-]
+  ticketTitle: {
+    type: String
+  },
+  ticketPrice: {
+    type: String
+  }
  
 });
 

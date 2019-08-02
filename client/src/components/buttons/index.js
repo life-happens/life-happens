@@ -8,6 +8,7 @@ import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
 import axios from "axios";
 
+
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1)
@@ -31,11 +32,8 @@ export default function IconButtons(props) {
     axios.get("/api/users/events/" + props.id )
     .then(res => {
       
-      // props.onClick(res);
+      window.location.reload();
   })
-
-    // pass in event id 
-    // axios call to delete from db
 
     
   }
@@ -48,13 +46,16 @@ export default function IconButtons(props) {
   }
   const goToEvent = () => {
     console.log(props.id);
-     // pass in event id 
-    //route to filled out event template
+
+    // axios.get("/api/users/events/:id" )
+    // .then(res => {
+    //   console.log(res.value);
+    // })
   }
 
-  const shareEvent = () => {
+  const shareEvent = (event) => {
     console.log(props.id) 
-
+console.log(event)
     // Use react-share to capture url of shareable webpage and share on social media
   }
 
@@ -75,6 +76,9 @@ export default function IconButtons(props) {
           className={classes.button}
           aria-label="Pageview"
           onClick={goToEvent}
+          id={props.id}
+          href={"/user/event/page/"+props.id}
+         
         >
           <PageviewIcon />
         </IconButton>

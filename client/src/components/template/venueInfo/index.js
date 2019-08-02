@@ -3,14 +3,17 @@ import icon_calendar from "../../../resources/images/icons/calendar.png";
 import icon_location from "../../../resources/images/icons/location.png";
 import "./style.css";
 import Zoom from 'react-reveal/Zoom';
+import moment from "moment";
 
 const VenueInfo = (props) => {
+ 
+
     return (
 
         <div className="bck_black">
             <div className="center_wrapper">
                 <div className="vn_wrapper">
-                    <Zoom duration="500">
+                    <Zoom duration= {500}>
                         <div className="vn_item">
                             <div className="vn_outer">
                                 <div className="vn_inner">
@@ -24,15 +27,18 @@ const VenueInfo = (props) => {
                                         Event Date & Time
                                 </div>
                                     <div className="vn_desc">
-                                        {props.date}
-                                </div>
+                                        {moment(props.date).format('MMMM Do, YYYY')}
+                                    </div>
+                                    <div className="vn_desc">
+                                        {props.time}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </Zoom>
 
 
-                    <Zoom duration="500" delay="500">
+                    <Zoom duration={500} delay={500}>
                         <div className="vn_item">
                             <div className="vn_outer">
                                 <div className="vn_inner">
@@ -47,7 +53,12 @@ const VenueInfo = (props) => {
                                 </div>
                                     <div className="vn_desc">
                                       {props.location}
-                                </div>
+                                    
+                                    </div>
+                                    <div className="vn_desc">
+                                      
+                                      {props.address}
+                                    </div>
                                 </div>
                             </div>
                         </div>
