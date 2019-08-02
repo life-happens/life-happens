@@ -28,7 +28,10 @@ const VenueInfo = (props) => {
                                 </div>
                                     <div className="vn_desc">
                                         {moment(props.date).format('MMMM Do, YYYY')}
-                                </div>
+                                    </div>
+                                    <div className="vn_desc">
+                                        {props.time}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +53,12 @@ const VenueInfo = (props) => {
                                 </div>
                                     <div className="vn_desc">
                                       {props.location}
-                                </div>
+                                    
+                                    </div>
+                                    <div className="vn_desc">
+                                      
+                                      {props.address}
+                                    </div>
                                 </div>
                             </div>
                         </div>

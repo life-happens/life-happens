@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import Slide from 'react-reveal/Slide';
+// import moment from 'moment';
 
 class CountDown extends Component {
     constructor(props) {
         super(props);
       
+        
     
         this.state = {
 
             // Replace this date with passed in date
-            deadline: "Sept, 4, 2019",
+            deadline: props.date,
             days: 0,
             hours: 0,
             minutes: 0,
@@ -17,6 +19,8 @@ class CountDown extends Component {
         }
     }
         getTimeUntil(deadline){
+           
+            
             const time = Date.parse(deadline) - Date.parse(new Date());
             if (time < 0) {
                 console.log("This event has passed")
@@ -25,12 +29,14 @@ class CountDown extends Component {
                 const minutes = Math.floor((time / 1000 / 60) % 60);
                 const hours = Math.floor((time / (1000 * 60 * 60)) % 24);
                 const days = Math.floor(time / (1000 * 60 * 60 * 24));
+               
 
                 this.setState({
                     days,
                     hours,
                     minutes,
-                    seconds
+                    seconds,
+                    
                 })
             }
 

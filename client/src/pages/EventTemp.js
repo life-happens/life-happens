@@ -35,6 +35,12 @@ class EventTemp extends Component {
 }
 
 }
+
+
+
+
+
+
 componentDidMount(){
  
 console.log(this)
@@ -49,19 +55,27 @@ var url = this.props.location.pathname;
     }
   } )
   .then(res => {
-    console.log(res);
-    const event = res.data[0]
-    this.setState({ 
-      eventName: event.name, 
-      date: event.date,
-      description: event.description,
-      location: event.location,
-      image: event.inspirationalPhoto,
-      discDate: "Oct 29, 2019",
-      percentOff: 25,
-      ticketPrice: [500],
-      ticketTitle: ["Balcony Seats"]
-    });
+
+    for(var i = 0; i < res.data.length; i++){
+      if(res.data[i]._id === id) {
+        console.log(res);
+        const event = res.data[i]
+        this.setState({ 
+          eventName: event.name, 
+          date: event.date,
+          time: event.time,
+          description: event.description,
+          location: event.location,
+          address: event.address,
+          image: event.inspirationalPhoto,
+          discDate: "Oct 29, 2019",
+          percentOff: 25,
+          ticketPrice: event.ticketPrice,
+          ticketTitle: event.ticketTitle
+        });
+      }
+    }
+
   })
 }
 
@@ -73,7 +87,7 @@ var url = this.props.location.pathname;
           <Featured eventName={this.state.eventName} image={this.state.image} date={this.state.date} />
         </Element>
         <Element name="venue_info">
-          <VenueInfo date={this.state.date} location={this.state.location} />
+          <VenueInfo date={this.state.date} time={this.state.time} location={this.state.location} address={this.state.address} />
         </Element>
         <Element name="highlight">
           <Highlights description={this.state.description} discDate={this.state.discDate} percentOff={this.state.percentOff} />

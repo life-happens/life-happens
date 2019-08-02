@@ -23,7 +23,9 @@ export default function SimpleModal() {
   const [values, setValues] = React.useState({
     eventName: "",
     date: "",
+    time: "",
     location: "",
+    address: "",
     description: "",
     inspirationalPhoto: [],
     discDate: "",
@@ -48,9 +50,11 @@ export default function SimpleModal() {
     axios.post('/api/users/event', {
       name: values.eventName,
       date: values.date,
+      time: values.time,
       location: values.location,
+      address: values.address,
       description: values.description,
-      inspirationalPhoto: [values.inspirationalPhoto],
+      inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
       ticketPrice: values.ticketPrice,
       ticketTitle: values.ticketTitle
     }, {headers: {'Accept': 'application/json'}})
@@ -115,12 +119,30 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
-              <TextField
+               <TextField
                 id="outlined-name"
-                label="Location"
+                label="Time"
+                className={classes.textField}
+                value={values.time}
+                onChange={handleChange("time")}
+                margin="normal"
+                variant="outlined"
+              />
+                <TextField
+                id="outlined-name"
+                label="Location Name"
                 className={classes.textField}
                 value={values.location}
                 onChange={handleChange("location")}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Location Address"
+                className={classes.textField}
+                value={values.address}
+                onChange={handleChange("address")}
                 margin="normal"
                 variant="outlined"
               />
@@ -133,17 +155,7 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
-             
-              <TextField
-                id="outlined-name"
-                label="Inspirational Images"
-                className={classes.textField}
-                value={values.inspirationalPhoto}
-                onChange={handleChange("inspirationalPhoto")}
-                margin="normal"
-                variant="outlined"
-              />
-                <TextField
+               <TextField
                 id="outlined-name"
                 label="Ticket Price"
                 className={classes.textField}
@@ -152,6 +164,26 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
+             
+              <TextField
+                id="outlined-name"
+                label="Inspirational Images"
+                className={classes.textField}
+                value={values.inspirationalPhoto1}
+                onChange={handleChange("inspirationalPhoto1")}
+                margin="normal"
+                variant="outlined"
+              />
+                 <TextField
+                id="outlined-name"
+                label="Inspirational Images"
+                className={classes.textField}
+                value={values.inspirationalPhoto2}
+                onChange={handleChange("inspirationalPhoto2")}
+                margin="normal"
+                variant="outlined"
+              />
+               
               <TextField
                 id="outlined-multiline-static"
                 label="Description"

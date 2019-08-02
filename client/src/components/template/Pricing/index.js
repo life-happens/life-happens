@@ -4,21 +4,22 @@ import Zoom from "react-reveal/Zoom";
 import "./style.css";
 
 class Pricing extends Component {
+    constructor(props) {
+        super(props);
 
-    
-    state = {
-        prices: [100, 175, 250],
-        positions: ["Item 1", "Item 2", "Item 3"],
-        desc: [
-            "Words",
-            "More Words",
-            "Most Words"
-        ],
-        linkto: ["http://sales/b", "http://sales/m", "http://sales/s"],
-        delay: [500, 0, 500]
+        this.state = {
+            prices: [props.ticketPrice],
+            positions: props.ticketTitle,
+            desc: [
+                "Words",
+                "More Words",
+                "Most Words"
+            ],
+            linkto: ["http://sales/b", "http://sales/m", "http://sales/s"],
+            delay: [500, 0, 500]
 
+        }
     }
-
     showBoxes = () => (
         this.state.prices.map((box, i) => (
             <Zoom key={i} delay={this.state.delay[i]}>
