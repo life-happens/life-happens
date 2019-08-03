@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
 import SimpleModal from "../modal";
-
-import Calendar from "react-calendar";
+import Calendar from "../calendar";
+// import Calendar from "react-calendar";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -15,7 +15,7 @@ import EventList from './eventList';
 function Event({ children }) {
   return (
     <Grid container justify="center">
-    <Grid item xs={4}>
+    <Grid item xs={3}>
     {/* <div className="event-container"> */}
       <h2 className="eventHeader"> My  Events</h2>
       
@@ -23,9 +23,9 @@ function Event({ children }) {
       
       <EventList/>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={1}>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={6}>
       <div className="calendar">
       <Calendar />
       <Grid item xs={3}>
