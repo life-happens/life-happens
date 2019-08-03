@@ -1,22 +1,53 @@
-import React from "react";
-import Calendar from "react-calendar";
+import React, { Component } from "react";
+import Axios from "axios";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import Card from "@material-ui/core/Card";
 
-export default function myCalendar() {
-  //    state = {
-  //         date: new Date(),
-  //       }
-  //  onChange = value => this.setState({ value })
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./style.css";
 
-  //  render() {
-  //     const { value } = this.state;
+const localizer = momentLocalizer(moment);
 
-  return (
-    <div id="calendar">
-      <Calendar
-      // onChange={this.onChange}
-      // value={value}
-      />
-    </div>
-  );
+class EventCalendar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      events: []
+    };
+  }
+  componentDidMount() {
+    Axios.get("/api/users/events").then(res => {
+      const events = res.data;
+      let eventsArray = [];
+      for (let i = 0; i < res.data.length; i++) {
+        eventsArray.push({
+          start: res.data[i].date,
+          end: res.data[i].date,
+          title: res.data[i].name
+        });
+      }
+      this.setState({
+        events: eventsArray
+      });
+      console.log(events);
+    });
+  }
+  render() {
+    return (
+      <Card className="calCard">
+        <div>
+          <Calendar
+            localizer={localizer}
+            defaultDate={new Date()}
+            views={["month"]}
+            events={this.state.events}
+            style={{ height: "300px" }}
+          />
+        </div>
+      </Card>
+    );
+  }
 }
-// }
+
+export default EventCalendar;
