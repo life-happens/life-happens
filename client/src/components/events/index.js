@@ -2,59 +2,40 @@ import React from "react";
 import "./style.css";
 import SimpleModal from "../modal";
 import Calendar from "../calendar";
-// import Calendar from "react-calendar";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import SaleImage from "../../resources/images/saleGraph.jpg";
-import EventList from './eventList';
-
+import EventList from "./eventList";
+import Table from "../table";
 
 function Event({ children }) {
   return (
     <Grid container justify="center">
-    <Grid item xs={3}>
-    {/* <div className="event-container"> */}
-      <h2 className="eventHeader"> My  Events</h2>
-      
-      <SimpleModal />
-      
-      <EventList/>
+      <Grid item xs={3}>
+        <h2 className="eventHeader"> My Events</h2>
+
+        <SimpleModal />
+
+        <EventList />
       </Grid>
-      <Grid item xs={1}>
-      </Grid>
+      <Grid item xs={1} />
       <Grid item xs={6}>
-      <div className="calendar">
-      <Calendar />
-      <Grid item xs={3}>
+        <div className="calendar">
+          <Calendar />
+          <Grid item xs={3} />
+          <Grid item xs={3} />
+          <br />
+          <Grid item xs={12}>
+            <Card>
+              <CardContent>
+                <Table />
+              </CardContent>
+            </Card>
+          </Grid>
+          <br />
+        </div>
       </Grid>
-      <Grid item xs={3}>
-      </Grid>
-      <br></br>
-      <Grid item xs={12}>
-      <Card>
-            <CardMedia
-              component="img"
-              alt="Sale Graph"
-              height="140"
-              image={SaleImage}
-              title="Sale Graph"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Sales Tracker
-              </Typography>
-            </CardContent>
-          </Card>
-      </Grid>
-      <br></br>
-      </div>
-      </Grid>
-      </Grid>
-      
-   
+    </Grid>
   );
 }
 export default Event;
