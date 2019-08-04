@@ -16,11 +16,10 @@ mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE, { useNewUrlPar
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-app.get('/', function (req, res) {
+​
+app.use(express.static(path.join(__dirname, "public")));
+​
+app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 // ============= Models==============
