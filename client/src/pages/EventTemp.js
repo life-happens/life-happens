@@ -17,13 +17,13 @@ class EventTemp extends Component {
 
     console.log(props.location.pathname)
 
-    
+    // const date = props.date;
   
 // Query DB with specific _id and Change state with db information
 
   this.state = {
 
-    date: "Nov, 4, 2019",
+    date: "August 10,2019",
     description: "All the Words",
     location: "Here",
     eventName: "YOUR AWESOME EVENT",

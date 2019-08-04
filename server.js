@@ -90,10 +90,13 @@ app.post("/api/users/login", (req, res) => {
 
 app.get("/api/user/logout", auth, (req, res) => {
   User.findByIdAndUpdate({ _id: req.user._id }, { token: "" }, (err, doc) => {
+    
     if (err) return res.json({ sucess: false, err });
     return res.status(200).send({
       success: true
+      
     });
+    
   });
 });
 // =====================Events=========================

@@ -3,10 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PageviewIcon from "@material-ui/icons/Pageview";
-import ShareIcon from "@material-ui/icons/Share";
+// import ShareIcon from "@material-ui/icons/Share";
 import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
 import axios from "axios";
+import Share from "./Share";
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -25,17 +27,17 @@ const useStyles = makeStyles(theme => ({
 export default function IconButtons(props) {
   const classes = useStyles();
   // console.log(props.id);
-  
+
   const deleteEvent = () => {
     console.log(props.id);
 
-    axios.get("/api/users/events/" + props.id )
-    .then(res => {
-      
-      window.location.reload();
-  })
+    axios.get("/api/users/events/" + props.id)
+      .then(res => {
 
-    
+        window.location.reload();
+      })
+
+
   }
 
   const updateEvent = () => {
@@ -53,19 +55,19 @@ export default function IconButtons(props) {
     // })
   }
 
-  const shareEvent = (event) => {
-    console.log(props.id) 
-console.log(event)
-    // Use react-share to capture url of shareable webpage and share on social media
-  }
+  // const shareEvent = (event) => {
+  //   console.log(props)
+  //   console.log(event)
+  //   // Use react-share to capture url of shareable webpage and share on social media
+  // }
 
   return (
     <div>
       <Tooltip title="Delete">
-        <IconButton 
-        className={classes.button} 
-        onClick={deleteEvent}  
-        aria-label="Delete"
+        <IconButton
+          className={classes.button}
+          onClick={deleteEvent}
+          aria-label="Delete"
         >
           <DeleteIcon />
         </IconButton>
@@ -77,8 +79,9 @@ console.log(event)
           aria-label="Pageview"
           onClick={goToEvent}
           id={props.id}
-          href={"/user/event/page/"+props.id}
-         
+          href={"/user/event/page/" + props.id}
+        // eventDate={props.date}
+
         >
           <PageviewIcon />
         </IconButton>
@@ -99,11 +102,16 @@ console.log(event)
           color="primary"
           className={classes.button}
           aria-label="Share"
-          onClick={shareEvent}
         >
-          <ShareIcon />
+          <Share
+            id={props.id}
+            name={props.name} 
+            />
         </IconButton>
       </Tooltip>
+
+     
+
     </div>
   );
 }

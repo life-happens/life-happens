@@ -36,6 +36,7 @@ constructor(props) {
                     className="event_buttons"
                     key={event._id}
                     id={event._id}
+                    name={event.name}
                     // onClick={com}
                 
                      />
