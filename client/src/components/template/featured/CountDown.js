@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import Slide from 'react-reveal/Slide';
-// import moment from 'moment';
+
 
 class CountDown extends Component {
     constructor(props) {
         super(props);
       
-        
-    
+        console.log("this " + props)
         this.state = {
 
             // Replace this date with passed in date
-            deadline: props.date,
+            deadline: props.eventDate,
             days: 0,
             hours: 0,
             minutes: 0,
             seconds: 0
         }
     }
+    getDeadline() {
+
+    }
+
         getTimeUntil(deadline){
            
             

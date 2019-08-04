@@ -5,7 +5,7 @@ import Slider from "react-slick";
 // import slide_three from "../../../resources/images/slide_three.jpg";
 
 const Carrousel = (props) => {
-console.log(props)
+console.log(props.date)
     var settings = {
         dots: false,
         infinite: true,
