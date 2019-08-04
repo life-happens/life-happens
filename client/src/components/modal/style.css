@@ -15,8 +15,8 @@
 }
  
 .add_event_button {
-  display: inherit;
-  margin-inline-start: 100px;
+   display: inherit; 
+  margin-inline-start: 200px;
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px;

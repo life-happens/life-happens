@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="bck_dark">
       <Fade delay={500}>
-        <div className="font_righteous footer_logo_venue">Life Happens</div>
+        <div className="font_righteous footer_logo_venue">Eventize</div>
         <div className="footer_copyright">
-          Life Happens 2019. All rights reserved.
+          Eventize 2019. All rights reserved.
         </div>
       </Fade>
     </footer>

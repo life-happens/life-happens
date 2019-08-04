@@ -21,10 +21,13 @@ function Event({ children }) {
       <Grid item xs={1} />
       <Grid item xs={6}>
         <div className="calendar">
-          <Calendar />
-          <Grid item xs={3} />
-          <Grid item xs={3} />
+          <Card>
+            <CardContent>
+              <Calendar />
+            </CardContent>
+          </Card>
           <br />
+
           <Grid item xs={12}>
             <Card>
               <CardContent>
