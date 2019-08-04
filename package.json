@@ -30,6 +30,9 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "10.15.0"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/life-happens/life-happens.git"

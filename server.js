@@ -10,7 +10,7 @@ require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)
-mongoose.connect(process.env.MONGODB_URI || "mongodb://mday1313:born1984@ds259347.mlab.com:59347/heroku_6qmrkgxv", { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/lifehappens", { useNewUrlParser: true })
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
