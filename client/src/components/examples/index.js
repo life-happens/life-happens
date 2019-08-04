@@ -7,11 +7,32 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
 function Examples({ children }) {
+  const [spacing] = React.useState(4);
   return (
     <div className="exampleContainer">
        <br /> 
       <h1 className="exampleHeader">Examples</h1>
-      <Grid container justify="center">
+      <Grid container justify="center" spacing={spacing}>
+        <Grid item xs={3}>
+          <Card>
+            <CardMedia
+              component="img"
+              alt="Event example"
+              height="140"
+              image={eventImage}
+              title="Event Example"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                Event Countdown
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                This is an example of an event with a countdown.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+
         <Grid item xs={3}>
           <Card>
             <CardMedia
