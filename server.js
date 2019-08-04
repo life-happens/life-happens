@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const app = express();
 app.use(morgan("tiny"));
+const path = require("path");
 
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -12,15 +13,14 @@ mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/lifehappens", { useNewUrlParser: true })
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-​
+
 app.use(express.static(path.join(__dirname, "public")));
-​
+
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+ res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 // ============= Models==============
 
