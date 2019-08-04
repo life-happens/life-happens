@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -7,7 +8,7 @@ app.use(morgan("tiny"));
 const path = require("path");
 
 const mongoose = require('mongoose');
-require('dotenv').config();
+
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)

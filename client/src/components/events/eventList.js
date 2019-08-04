@@ -12,6 +12,7 @@ constructor(props) {
     console.log(props)
 }
     componentDidMount() {
+        window.scrollTo(0, 0)
         
         axios.get('/api/users/events')
             .then(res => {
