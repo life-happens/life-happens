@@ -99,8 +99,10 @@ export default function IconButtons(props) {
         >
           <Share
             id={props.id}
-            name={props.name} 
-            url={"/user/event/page/" + props.id}
+            name={props.name}
+            image={props.image}
+            description={props.description} 
+            // url={"/user/event/page/" + props.id}
             />
         </IconButton>
       </Tooltip>

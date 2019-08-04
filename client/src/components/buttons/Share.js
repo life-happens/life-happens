@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FacebookShareButton, FacebookIcon, } from "react-share";
+import { EmailShareButton, EmailIcon, } from "react-share";
 
 class Share extends Component {
     constructor(props) {
@@ -8,28 +9,41 @@ class Share extends Component {
 
         this.state = {
             title: props.name,
-            shareUrl: props.url
+            id: props.id,
+            description: props.description
         }
     }
 
 
     render() {
-        const shareUrl = "www.melissadayphotography.com";
+        const shareUrl = "https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
         // const title = 'GitHub';
 
         return (
-           
             <div>
-                <FacebookShareButton
-                    url={shareUrl}
-                    quote={this.state.title}
-                    >
-                    <FacebookIcon
-                        size={32}
-                        round />
-                </FacebookShareButton>
+                <div >
+                    <FacebookShareButton
+                        url={shareUrl}
+                        quote={this.state.title}
 
-               
+                    >
+                        <FacebookIcon
+                            size={32}
+                            round />
+                    </FacebookShareButton>
+                </div>
+                <div>
+                    <EmailShareButton
+                        url={shareUrl}
+                        subject={this.state.title}
+
+                        body={this.state.description}
+                    >
+                        <EmailIcon
+                            size={32}
+                            round />
+                    </EmailShareButton>
+                </div>
             </div>
         );
     }

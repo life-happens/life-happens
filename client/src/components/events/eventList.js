@@ -12,7 +12,7 @@ constructor(props) {
     console.log(props)
 }
     componentDidMount() {
-        
+        window.scrollTo(0, 0)
         axios.get('/api/users/events')
             .then(res => {
                 const events = res.data;
@@ -37,6 +37,8 @@ constructor(props) {
                     key={event._id}
                     id={event._id}
                     name={event.name}
+                    image={event.inspirationalPhoto}
+                    description={event.description}
                     // onClick={com}
                 
                      />

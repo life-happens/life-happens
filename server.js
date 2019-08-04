@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const app = express();
-app.use(morgan("tiny"));
 
 const mongoose = require('mongoose');
 require('dotenv').config();
