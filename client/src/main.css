@@ -1,3 +1,8 @@
+/* jumbotron Text */
+.jumboText {
+  color: white;
+}
+/* --------------- */
 body {
   padding: 0;
   margin: 0;
@@ -7,19 +12,14 @@ body {
 .font_righteous {
   font-family: "Righteous", cursive;
 }
-/* .text_dark{
-    color: #204969;
-} */
+
 .bck_black {
   background: #2e2a2a;
 }
 .bck_white {
   background: #fff7f7;
 }
-/* .bck_dark {
-    background: #204969;
-    
-} */
+
 .bck_yellow {
   background: #dadada;
 }
@@ -38,9 +38,7 @@ body {
   text-align: center;
   height: 80vh;
   justify-content: center;
-  /* margin: 40px; */
   padding: 50px;
-  /* margin-bottom: 5px; */
   background-color: #204969;
 }
 #aboutText {
@@ -51,18 +49,20 @@ h1 {
 }
 .exampleContainer {
   background-color: #738598;
+  height: 105vh;
 }
-
-/* .reg_container{
-    background: #204969;
-} */
-
+.exampleHeader{
+  padding-top:75px;
+  font-size: 35px;
+  text-decoration: underline;
+}
 .dash_Header {
   text-align: center;
   height: 100px;
   background-color: white;
   margin: 0;
-  color:#204969;
+  color: #204969;
   padding-top: 50px;
   font-family: "Righteous", cursive;
+  text-decoration: underline;
 }

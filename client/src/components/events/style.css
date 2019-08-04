@@ -2,34 +2,35 @@
   text-align: center;
   margin: 0;
   background-color: #dadada;
-  /* height: 200px; */
 }
 
 .eventList {
-  justify-content: left;
-  font-size: 25px;
+  font-size: 23px;
   color: #204969;
   display: inline;
+}
 
-}
-.eventListItem {
-  margin: 10px;
-}
 .eventHeader {
-  /* text-align:center; */
-  justify-content: left;
+  text-align: center;
   font-size: 35px;
-  display: inline-block;
-  margin-left: -80px;
+  margin-left: -110px;
+  color: #204969;
 }
- .event_buttons {
+.event_buttons {
   justify-content: right;
   display: inline-block;
-  /* margin-left: -80px; */
-} 
+}
 .calendar {
-  /* margin-top: 30px; */
-  display: inline-block;
   margin-block-start: 30px;
-  margin-inline-start: 70px;
-  }
+}
+.cardList {
+  margin: 10px;
+
+  width: 300px;
+  text-align: center;
+}
+.eventListItem {
+  color: #407088;
+  padding: 0;
+  padding-top: 10px;
+}
