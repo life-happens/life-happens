@@ -27,7 +27,7 @@ class EventTemp extends Component {
     description: "All the Words",
     location: "Here",
     eventName: "YOUR AWESOME EVENT",
-    image: ["https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
+    image: ["https://www.newsbugz.com/wp-content/uploads/2019/04/best-party-planner.jpg, https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
     discDate: "Oct 29, 2019",
     percentOff: 25,
     ticketPrice: [500],
