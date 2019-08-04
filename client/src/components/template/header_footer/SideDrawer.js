@@ -16,10 +16,10 @@ const SideDrawer = (props) => {
         props.onClose(false)
     }
 
-    function openInNewTab(url) {
-        var win = window.open(url, '_blank');
-        win.focus();
-      }
+    // function openInNewTab(url) {
+    //     var win = window.open(url, '_blank');
+    //     win.focus();
+    //   }
 
     return (
        <Drawer
