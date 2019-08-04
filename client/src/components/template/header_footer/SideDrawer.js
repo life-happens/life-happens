@@ -15,6 +15,12 @@ const SideDrawer = (props) => {
         });
         props.onClose(false)
     }
+
+    // function openInNewTab(url) {
+    //     var win = window.open(url, '_blank');
+    //     win.focus();
+    //   }
+
     return (
        <Drawer
            anchor="right"
@@ -38,6 +44,9 @@ const SideDrawer = (props) => {
                 <ListItem button onClick={() => scrollToElement("location")}>
                 Location
                 </ListItem>
+                {/* <ListItem button >
+                Back to Dashboard
+                </ListItem> */}
             </List>
            
            

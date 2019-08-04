@@ -1,23 +1,28 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-
+const morgan = require("morgan");
 const app = express();
+app.use(morgan("tiny"));
+const path = require("path");
 
 const mongoose = require('mongoose');
-require('dotenv').config();
+
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/lifehappens", { useNewUrlParser: true })
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+app.use(express.static(path.join(__dirname, "public")));
 
-
+app.get("/", function(req, res) {
+ res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 // ============= Models==============
 
 const { User } = require("./models/user");
@@ -90,10 +95,13 @@ app.post("/api/users/login", (req, res) => {
 
 app.get("/api/user/logout", auth, (req, res) => {
   User.findByIdAndUpdate({ _id: req.user._id }, { token: "" }, (err, doc) => {
+    
     if (err) return res.json({ sucess: false, err });
     return res.status(200).send({
       success: true
+      
     });
+    
   });
 });
 // =====================Events=========================
@@ -143,32 +151,6 @@ app.get('/api/users/events/:id', auth, function (req, res) {
    .catch(err => res.status(422).json(err));
 
 });
-
-
-// app.get('/api/events/page/:id', function (req, res) {
-
-  
-//   Event.findOne({ _id: req.params._id })
-//     .then(dbModel => res.json(dbModel))
-//    .catch(err => res.status(422).json(err));
-
-// });
-// ==========================Profile==========================
-
-// post
-
-// get
-
-
-// ========================Tickets=============================
-
-// Post
-
-//  Get
-
-
-
-
 
 
 const port = process.env.PORT || 3002;

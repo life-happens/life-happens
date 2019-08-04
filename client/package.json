@@ -2,7 +2,7 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3002/",
+  "proxy": "http://localhost:3002",
   "dependencies": {
     "@material-ui/core": "^4.2.1",
     "@material-ui/icons": "^4.2.1",
@@ -26,6 +26,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll": "^1.7.12",
+    "react-share": "^3.0.0",
     "react-slick": "^0.24.0",
     "redux": "^4.0.4",
     "redux-promise": "^0.6.0",

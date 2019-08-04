@@ -99,6 +99,10 @@ class Register extends Component {
         }
     }
 
+    componentDidMount(){
+        window.scrollTo(0, 0)
+    } 
+    
     updateForm = (element) => {
         const newFormdata = update(element, this.state.formdata, 'register');
         this.setState({

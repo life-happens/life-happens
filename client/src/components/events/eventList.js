@@ -10,14 +10,24 @@ class EventList extends Component {
     this.state = {
       events: []
     };
-    console.log(props);
-  }
-  componentDidMount() {
-    axios.get("/api/users/events").then(res => {
-      const events = res.data;
-      this.setState({ events });
-    });
-  }
+
+    console.log(props)
+}
+    componentDidMount() {
+        window.scrollTo(0, 0)
+        
+        axios.get('/api/users/events')
+            .then(res => {
+                const events = res.data;
+                this.setState({ events });
+            })
+            
+    }
+
+//    Figure out how to make render when item added to db
+
+    
+
 
   render() {
     return (
@@ -28,19 +38,22 @@ class EventList extends Component {
               <div>
                 {event.name}
 
-                <IconButtons
-                  className="event_buttons"
-                  key={event._id}
-                  id={event._id}
-                  // onClick={com}
-                />
-              </div>
-            </ol>{" "}
-          </Card>
-        ))}
-      </ul>
-    );
-  }
+
+                    <IconButtons
+                    className="event_buttons"
+                    key={event._id}
+                    id={event._id}
+                    name={event.name}
+                    // onClick={com}
+                
+                     />
+                    </div>
+                </li>)}
+            </ul>
+            
+        );
+    }
+
 }
 
 export default EventList;
