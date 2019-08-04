@@ -10,7 +10,7 @@ require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)
-mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/lifehappens", { useNewUrlParser: true })
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -150,32 +150,6 @@ app.get('/api/users/events/:id', auth, function (req, res) {
    .catch(err => res.status(422).json(err));
 
 });
-
-
-// app.get('/api/events/page/:id', function (req, res) {
-
-  
-//   Event.findOne({ _id: req.params._id })
-//     .then(dbModel => res.json(dbModel))
-//    .catch(err => res.status(422).json(err));
-
-// });
-// ==========================Profile==========================
-
-// post
-
-// get
-
-
-// ========================Tickets=============================
-
-// Post
-
-//  Get
-
-
-
-
 
 
 const port = process.env.PORT || 3002;
