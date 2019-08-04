@@ -103,7 +103,7 @@ export default function SimpleModal() {
             <div>
               <TextField
                 id="outlined-name"
-                label=" Event Name"
+                label="Event Name"
                 className={classes.textField}
                 value={values.eventName}
                 onChange={handleChange("eventName")}
@@ -167,7 +167,7 @@ export default function SimpleModal() {
              
               <TextField
                 id="outlined-name"
-                label="Inspirational Images"
+                label="Image URL"
                 className={classes.textField}
                 value={values.inspirationalPhoto1}
                 onChange={handleChange("inspirationalPhoto1")}
@@ -176,7 +176,7 @@ export default function SimpleModal() {
               />
                  <TextField
                 id="outlined-name"
-                label="Inspirational Images"
+                label="Image URL"
                 className={classes.textField}
                 value={values.inspirationalPhoto2}
                 onChange={handleChange("inspirationalPhoto2")}

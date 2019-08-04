@@ -29,7 +29,7 @@ export default function ContainedButtons(props) {
 
   return (
     <div className={classes.root}>
-      <Button variant="contained" onClick={props.onClick} className={classes.button} href="/" >
+      <Button variant="contained" onClick={props.onClick} className={classes.button}  >
         LogOut
       </Button>
    

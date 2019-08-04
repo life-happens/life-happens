@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 export default function IconButtons(props) {
   const classes = useStyles();
   // console.log(props.id);
-
+  const url = "/user/event/page/" + props.id;
   const deleteEvent = () => {
     console.log(props.id);
 
@@ -46,21 +46,16 @@ export default function IconButtons(props) {
 
     // axios call to display & update from db
   }
+
+
   const goToEvent = () => {
     console.log(props.id);
-
-    // axios.get("/api/users/events/:id" )
-    // .then(res => {
-    //   console.log(res.value);
-    // })
+    var win = window.open(url, '_blank');
+    win.focus();
+    
   }
 
-  // const shareEvent = (event) => {
-  //   console.log(props)
-  //   console.log(event)
-  //   // Use react-share to capture url of shareable webpage and share on social media
-  // }
-
+  
   return (
     <div>
       <Tooltip title="Delete">
@@ -79,8 +74,7 @@ export default function IconButtons(props) {
           aria-label="Pageview"
           onClick={goToEvent}
           id={props.id}
-          href={"/user/event/page/" + props.id}
-        // eventDate={props.date}
+     
 
         >
           <PageviewIcon />
@@ -106,6 +100,7 @@ export default function IconButtons(props) {
           <Share
             id={props.id}
             name={props.name} 
+            url={"/user/event/page/" + props.id}
             />
         </IconButton>
       </Tooltip>

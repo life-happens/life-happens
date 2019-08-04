@@ -8,17 +8,17 @@ class Share extends Component {
 
         this.state = {
             title: props.name,
-            
+            shareUrl: props.url
         }
     }
 
 
     render() {
-        const shareUrl = process.env.PORT + '/user/event/page/' + this.props.id;
+        const shareUrl = "www.melissadayphotography.com";
         // const title = 'GitHub';
 
         return (
-
+           
             <div>
                 <FacebookShareButton
                     url={shareUrl}

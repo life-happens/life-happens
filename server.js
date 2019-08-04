@@ -9,14 +9,16 @@ require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 mongoose.set('useCreateIndex', true)
-mongoose.connect(process.env.DATABASE, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE, { useNewUrlParser: true })
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // ============= Models==============
 
