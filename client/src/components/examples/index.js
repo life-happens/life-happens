@@ -1,5 +1,6 @@
 import React from "react";
 import eventImage from "../../resources/images/event.PNG";
+import eventImage2 from "../../resources/images/slide_two.jpg"
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -42,15 +43,15 @@ function Examples({ children }) {
               component="img"
               alt="Event example"
               height="140"
-              image={eventImage}
+              image={eventImage2}
               title="Event Example"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Event Countdown
+                Event Promotion
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-                This is an example of an event with a countdown.
+                Advertise your event and where it is located.
               </Typography>
             </CardContent>
           </Card>
