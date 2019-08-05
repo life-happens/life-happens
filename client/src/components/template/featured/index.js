@@ -1,6 +1,6 @@
 import React from 'react';
 import Carrousel from "./Carrousel";
-import CountDown from "./CountDown";
+import CountDown from "./CountDown.js";
 import "./style.css";
 
 

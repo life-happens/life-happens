@@ -7,7 +7,7 @@ const Highlights = (props) => {
     return (
         <div className="highlight_wrapper">
             <Description  description={props.description}/>
-            <Discount />
+            <Discount discDate={props.discDate} percentOff={props.percentOff}/>
         </div>
     );
 };

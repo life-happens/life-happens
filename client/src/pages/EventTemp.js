@@ -8,7 +8,7 @@ import Highlights from "../components/template/highlights";
 import Pricing from "../components/template/Pricing";
 import Location from "../components/template/Location";
 import Footer from "../components/header_footer/Footer";
- import axios from "axios";
+import axios from "axios";
 
 
 class EventTemp extends Component {
@@ -28,10 +28,11 @@ class EventTemp extends Component {
     location: "Here",
     eventName: "YOUR AWESOME EVENT",
     image: ["https://www.newsbugz.com/wp-content/uploads/2019/04/best-party-planner.jpg", "https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
-    discDate: "Oct 29, 2019",
+    discDate: "Aug 10, 2019",
     percentOff: 25,
-    ticketPrice: [100],
-    ticketTitle: ["Balcony Seats"]
+    ticketPrice: 35,
+    ticketTitle: "Single Entry",
+    ticketDesc: "Description of what ticket includes"
 }
 
 }
@@ -68,10 +69,11 @@ var url = this.props.location.pathname;
           location: event.location,
           address: event.address,
           image: event.inspirationalPhoto,
-          discDate: "Oct 29, 2019",
-          percentOff: 25,
+          discDate: event.discDate,
+          percentOff: event.percentOff,
           ticketPrice: event.ticketPrice,
-          ticketTitle: event.ticketTitle
+          ticketTitle: event.ticketTitle,
+          ticketDesc: event.ticketDesc
         });
       }
     }
@@ -93,7 +95,7 @@ var url = this.props.location.pathname;
           <Highlights description={this.state.description} discDate={this.state.discDate} percentOff={this.state.percentOff} />
         </Element>
         <Element name="pricing">
-            <Pricing ticketTitle={this.state.ticketTitle} ticketPrice={this.state.ticketPrice} />
+            <Pricing ticketTitle={this.state.ticketTitle} ticketPrice={this.state.ticketPrice} ticketDesc={this.state.ticketDesc}/>
         </Element>
         <Element name="location">
           <Location />

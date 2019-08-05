@@ -1,8 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-// import slide_one from "../../../resources/images/slide_one.jpg";
-// import slide_two from "../../../resources/images/slide_two.jpg";
-// import slide_three from "../../../resources/images/slide_three.jpg";
+
 
 const Carrousel = (props) => {
 console.log(props.date)
@@ -32,7 +30,7 @@ console.log(props.date)
                     <div
                         className="carrousel_image"
                         style={{
-                            background: `url(${props.image[1]})`,
+                            background: `url(${props.image[0]})`,
                             height: `${window.innerHeight}px`
                         }}
                     >
@@ -54,7 +52,7 @@ console.log(props.date)
                     <div
                         className="carrousel_image"
                         style={{
-                            background: `url(${props.image[0]})`,
+                            background: `url(${props.image[1]})`,
                             height: `${window.innerHeight}px`
                         }}
                     >
