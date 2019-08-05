@@ -39,7 +39,7 @@ function HowItWorks() {
             <Card className={classes.card}>
               <i className="fas fa-dollar-sign fa-7x" />
               <h2>Add/Track Sales</h2>
-              <h3>A handy record keeping tool to monitor sales of your tickets.</h3>
+              <h3>A handy tool to sell and monitor sales of your tickets.</h3>
             </Card>
           </Grid>
           <Grid item xs={2}>

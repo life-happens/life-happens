@@ -2,6 +2,12 @@
 .jumboText {
   color: white;
 }
+.jumboHeader1{
+  font-size: 30px;
+}
+.jumboHeader2 {
+  font-size: 25px;
+}
 /* --------------- */
 body {
   padding: 0;
@@ -41,8 +47,13 @@ body {
   padding: 50px;
   background-color: #204969;
 }
+.aboutHeader {
+  font-size: 40px;
+  padding: 5px;
+  text-decoration: underline;
+}
 #aboutText {
-  font-size: 20px;
+  font-size: 26px;
 }
 h1 {
   text-align: center;
