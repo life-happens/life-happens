@@ -4,12 +4,15 @@ import Slide from "react-reveal/Slide";
 import MyButton from "../utils/MyButton";
 
 class Discount extends Component {
+    constructor(props){
+        super(props);
 
-    state = {
+    this.state = {
         discountStart: 0,
-        discountEnd: 30
+        discountEnd: props.percentOff,
+        discDate: props.discDate
     }
-
+}
     percentage = () => {
         if(this.state.discountStart < this.state.discountEnd){
             this.setState({
@@ -39,7 +42,7 @@ class Discount extends Component {
 
                     <Slide right>
                         <div className="discount_description">
-                            <h3>Purchase tickets before October 30th.</h3>
+                            <h3>Purchase tickets before {this.state.discDate}.</h3>
                             <p>Don't wait, these tickets will sell out!</p>
                             <MyButton 
                                 text="Purchase tickets"

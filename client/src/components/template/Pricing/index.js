@@ -9,13 +9,9 @@ class Pricing extends Component {
 
         this.state = {
             prices: [props.ticketPrice],
-            positions: props.ticketTitle,
-            desc: [
-                "Words",
-                "More Words",
-                "Most Words"
-            ],
-            linkto: ["http://sales/b", "http://sales/m", "http://sales/s"],
+            positions: [props.ticketTitle],
+            desc: [props.ticketDesc],
+            linkto: ["https://stripe.com/connect", "https://stripe.com/connect", "https://stripe.com/connect"],
             delay: [500, 0, 500]
 
         }
