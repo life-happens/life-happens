@@ -20,7 +20,6 @@ app.use(cookieParser());
 
 app.use(express.static("client/build"));
 
-
 // app.use((req, res, next) => {
 //   res.header(
 //     "Access-Control-Allow-Origin",
