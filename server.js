@@ -20,6 +20,7 @@ app.use(cookieParser());
 
 app.use(express.static("client/build"));
 
+
 // app.use((req, res, next) => {
 //   res.header(
 //     "Access-Control-Allow-Origin",
@@ -166,12 +167,12 @@ app.get('/api/users/events/:id', auth, function (req, res) {
 
 // Default
 
-if (process.env.NODE_ENV === "production") {
-  app.get('/*', (req,res)=>{
+
+  app.get('*', (req,res)=>{
     res.sendfile(path.resolve(__dirname, './client', 'build', 'index.html'))
   })
   
-}
+
 
 const port = process.env.PORT || 3002;
 
