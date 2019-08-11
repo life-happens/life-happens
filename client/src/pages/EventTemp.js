@@ -23,7 +23,7 @@ class EventTemp extends Component {
 
   this.state = {
 
-    date: "August 24,2019",
+    date: "August 24, 2019",
     description: "All the Words",
     location: "Here",
     eventName: "YOUR AWESOME EVENT",

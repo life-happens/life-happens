@@ -29,6 +29,7 @@ class EventList extends Component {
                   className="event_buttons"
                   key={event._id}
                   id={event._id}
+                  date={event.date}
                   // onClick={com}
                 />
               </div>

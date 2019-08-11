@@ -6,7 +6,7 @@ class CountDown extends Component {
     constructor(props) {
         super(props);
       
-        console.log("this " + props)
+        console.log("this " + props.eventDate)
         this.state = {
 
             // Replace this date with passed in date
@@ -46,6 +46,7 @@ class CountDown extends Component {
         }
 
         componentDidMount(){
+            
            setInterval(() => this.getTimeUntil(this.state.deadline), 1000)
             
         }

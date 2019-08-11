@@ -3,7 +3,7 @@ import Slider from "react-slick";
 
 
 const Carrousel = (props) => {
-console.log(props.date)
+
     var settings = {
         dots: false,
         infinite: true,
