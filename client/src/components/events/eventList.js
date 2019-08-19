@@ -30,6 +30,8 @@ class EventList extends Component {
                   key={event._id}
                   id={event._id}
                   date={event.date}
+                  name={event.name}
+                  description={event.description}
                   // onClick={com}
                 />
               </div>

@@ -8,6 +8,8 @@ import EditIcon from "@material-ui/icons/Create";
 import Tooltip from "@material-ui/core/Tooltip";
 import axios from "axios";
 import Share from "./Share";
+import moment from "moment";
+
 
 
 
@@ -42,7 +44,8 @@ export default function IconButtons(props) {
 
   const updateEvent = () => {
     console.log(props.id);
-    // pass in event id 
+
+   alert(props.id + "\n " +  props.name + "\n " + moment(props.date).format('MMMM Do, YYYY') );
 
     // axios call to display & update from db
   }
@@ -87,6 +90,7 @@ export default function IconButtons(props) {
           aria-label="Create"
           onClick={updateEvent}
         >
+          
           <EditIcon />
         </IconButton>
       </Tooltip>

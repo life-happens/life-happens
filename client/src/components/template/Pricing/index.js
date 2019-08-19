@@ -8,7 +8,7 @@ class Pricing extends Component {
         super(props);
 
         this.state = {
-            prices: [props.ticketPrice],
+            prices: [props.price],
             positions: [props.ticketTitle],
             desc: [props.ticketDesc],
             linkto: ["https://stripe.com/connect", "https://stripe.com/connect", "https://stripe.com/connect"],

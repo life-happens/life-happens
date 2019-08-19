@@ -3,28 +3,31 @@ import Slide from 'react-reveal/Slide';
 
 
 class CountDown extends Component {
-    constructor(props) {
-        super(props);
+    
+    // constructor(props) {
+    //     super(props);
       
-        console.log("this " + props.eventDate)
-        this.state = {
+        // console.log("this " + props.eventDate)
+        
+        state = {
 
             // Replace this date with passed in date
-            deadline: props.eventDate,
+            deadline:'',
             days: 0,
             hours: 0,
             minutes: 0,
             seconds: 0
         }
-    }
-    getDeadline() {
-
-    }
+    // }
+    // getDeadline() {
+    //     console.log(this.props.eventDate);
+        
+    // }
 
         getTimeUntil(deadline){
            
-            
-            const time = Date.parse(deadline) - Date.parse(new Date());
+            const date = this.props.eventDate
+            const time = Date.parse(date) - Date.parse(new Date());
             if (time < 0) {
                 console.log("This event has passed")
             } else {
@@ -39,6 +42,7 @@ class CountDown extends Component {
                     hours,
                     minutes,
                     seconds,
+                    deadline
                     
                 })
             }
@@ -46,7 +50,8 @@ class CountDown extends Component {
         }
 
         componentDidMount(){
-            
+            console.log("pls" + this.props.eventDate); 
+
            setInterval(() => this.getTimeUntil(this.state.deadline), 1000)
             
         }

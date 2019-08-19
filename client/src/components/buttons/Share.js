@@ -4,7 +4,7 @@ import { EmailShareButton, EmailIcon, } from "react-share";
 class Share extends Component {
    constructor(props) {
        super(props)
-       console.log("this" + props)
+       
        this.state = {
            title: props.name,
            id: props.id,
@@ -14,13 +14,14 @@ class Share extends Component {
    }
    render() {
        const shareUrl = "https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
+       const name = this.state.title;
        // const title = 'GitHub';
        return (
            <div>
                <div >
                    <FacebookShareButton
                        url={shareUrl}
-                       quote={this.state.title}
+                       quote={name}
                    >
                        <FacebookIcon
                            size={32}
@@ -30,8 +31,8 @@ class Share extends Component {
                <div>
                    <EmailShareButton
                        url={shareUrl}
-                       subject={this.state.title}
-                       body={this.state.description}
+                       subject={name}
+                       body={this.state.image}
                    >
                        <EmailIcon
                            size={32}

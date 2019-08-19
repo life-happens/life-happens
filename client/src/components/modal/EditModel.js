@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SimpleModal() {
+export default function EditModal() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     eventName: "",

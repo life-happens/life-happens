@@ -45,15 +45,17 @@ body {
   height: 80vh;
   justify-content: center;
   padding: 50px;
-  background-color: #204969;
+  
 }
 .aboutHeader {
   font-size: 40px;
   padding: 5px;
   text-decoration: underline;
+  color: #204969;
 }
 #aboutText {
   font-size: 26px;
+  color: #204969;
 }
 h1 {
   text-align: center;
