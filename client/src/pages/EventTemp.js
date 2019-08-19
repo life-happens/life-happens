@@ -44,11 +44,11 @@ class EventTemp extends Component {
 
 componentDidMount(){
  
-console.log(this)
+
 
 var url = this.props.location.pathname;
   var id = url.substring(url.lastIndexOf('/') + 1);
- console.log(id);
+
 
   axios.get("/api/users/events/",{
     params: {
@@ -95,10 +95,10 @@ var url = this.props.location.pathname;
           <Highlights description={this.state.description} discDate={this.state.discDate} percentOff={this.state.percentOff} />
         </Element>
         <Element name="pricing">
-            <Pricing ticketTitle={this.state.ticketTitle} ticketPrice={this.state.ticketPrice} ticketDesc={this.state.ticketDesc}/>
+            <Pricing ticketTitle={this.state.ticketTitle} price={this.state.ticketPrice} ticketDesc={this.state.ticketDesc}/>
         </Element>
         <Element name="location">
-          <Location />
+          <Location address={this.state.address}/>
         </Element>
         <Footer />
       </div>

@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     height: 300,
     minWidth: 200,
     padding: theme.spacing(2),
-    justifyContent: "center"
+    justifyContent: "center" 
     
   }
 }));
@@ -30,21 +30,21 @@ function HowItWorks() {
         <Grid container justify="center" spacing={spacing}>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i className="fas fa-calendar-day fa-7x" />
+              <i className="fas fa-calendar-day fa-5x" justifyContent="center" />
               <h2>Create an Event</h2>
               <h3>Add an event and create a custom website using a cutting edge template.</h3>
             </Card>
           </Grid>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i className="fas fa-dollar-sign fa-7x" />
+              <i className="fas fa-dollar-sign fa-5x"/>
               <h2>Add/Track Sales</h2>
               <h3>A handy tool to sell and monitor sales of your tickets.</h3>
             </Card>
           </Grid>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i className="fas fa-user-friends fa-7x" />
+              <i className="fas fa-user-friends fa-5x" />
               <h2>Share</h2>
               <h3>Spread the word of your event using your favorite scoial media platform or method.</h3>
             </Card>
