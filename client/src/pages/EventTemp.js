@@ -34,18 +34,11 @@ class EventTemp extends Component {
     ticketTitle: "Single Entry",
     ticketDesc: "Description of what ticket includes"
 }
-
 }
-
-
-
-
 
 
 componentDidMount(){
  
-
-
 var url = this.props.location.pathname;
   var id = url.substring(url.lastIndexOf('/') + 1);
 
@@ -73,7 +66,7 @@ var url = this.props.location.pathname;
           percentOff: event.percentOff,
           ticketPrice: event.ticketPrice,
           ticketTitle: event.ticketTitle,
-          ticketDesc: event.ticketDesc
+          ticketDesc: event.ticketDescription
         });
       }
     }

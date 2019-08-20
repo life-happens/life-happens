@@ -4,29 +4,28 @@ import Zoom from "react-reveal/Zoom";
 import "./style.css";
 
 class Pricing extends Component {
-    constructor(props) {
-        super(props);
+    
 
-        this.state = {
-            prices: [props.price],
-            positions: [props.ticketTitle],
-            desc: [props.ticketDesc],
+        state = {
+            prices: [this.props.price],
+            positions: [this.props.ticketTitle],
+            desc: [this.props.ticketDesc],
             linkto: ["https://stripe.com/connect", "https://stripe.com/connect", "https://stripe.com/connect"],
             delay: [500, 0, 500]
 
         }
-    }
+  
     showBoxes = () => (
         this.state.prices.map((box, i) => (
-            <Zoom key={i} delay={this.state.delay[i]}>
+            <Zoom key={i} delay={500}>
                 <div className="pricing_item">
                     <div className="pricing_inner_wrapper">
                         <div className="pricing_title">
-                            <span>${this.state.prices[i]}</span>
-                            <span>{this.state.positions[i]}</span>
+                            <span>${this.props.price}</span>
+                            <span>{this.props.ticketTitle}</span>
                         </div>
                         <div className="pricing_description">
-                            <span>{this.state.desc[i]}</span>
+                            <span>{this.props.ticketDesc}</span>
                         </div>
                         <div className="pricing_buttons">
                             <MyButton

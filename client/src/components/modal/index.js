@@ -31,7 +31,8 @@ export default function SimpleModal() {
     discDate: "",
     percentOff: "",
     ticketPrice: [],
-    ticketTitle: []
+    ticketTitle: [],
+    ticketDescription: ""
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -56,7 +57,10 @@ export default function SimpleModal() {
       description: values.description,
       inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
       ticketPrice: values.ticketPrice,
-      ticketTitle: values.ticketTitle
+      ticketTitle: values.ticketTitle,
+      ticketDescription: values.ticketDescription,
+      discDate: values.discDate,
+      percentOff: values.percentOff
     }, {headers: {'Accept': 'application/json'}})
     .then(function (response){
       console.log(response);
@@ -164,7 +168,33 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
-             
+              <TextField
+                id="outlined-name"
+                label="Ticket Description (optional)"
+                className={classes.textField}
+                value={values.ticketDescription}
+                onChange={handleChange("ticketDescription")}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Date for Early Purchase Discount Cutoff (optional)"
+                className={classes.textField}
+                value={values.discDate}
+                onChange={handleChange("discDate")}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Discount Percentage for Early Purchase (optional)"
+                className={classes.textField}
+                value={values.percentOff}
+                onChange={handleChange("percentOff")}
+                margin="normal"
+                variant="outlined"
+              />
               <TextField
                 id="outlined-name"
                 label="Image URL"

@@ -2,19 +2,17 @@ import React, { Component } from 'react';
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 import MyButton from "../utils/MyButton";
+import moment from "moment";
 
 class Discount extends Component {
-    constructor(props){
-        super(props);
-
-    this.state = {
+   
+    state = {
         discountStart: 0,
-        discountEnd: props.percentOff,
-        discDate: props.discDate
+       
     }
-}
+
     percentage = () => {
-        if(this.state.discountStart < this.state.discountEnd){
+        if(this.state.discountStart < this.props.percentOff){
             this.setState({
                 discountStart: this.state.discountStart + 1
             })
@@ -42,7 +40,7 @@ class Discount extends Component {
 
                     <Slide right>
                         <div className="discount_description">
-                            <h3>Purchase tickets before {this.state.discDate}.</h3>
+                            <h3>Purchase tickets before {moment(this.props.discDate).format('MMMM Do, YYYY')}.</h3>
                             <p>Don't wait, these tickets will sell out!</p>
                             <MyButton 
                                 text="Purchase tickets"
