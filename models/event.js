@@ -34,6 +34,15 @@ const eventSchema = mongoose.Schema({
   },
   ticketPrice: {
     type: String
+  },
+  ticketDescription: {
+    type: String
+  },
+  discDate: {
+    type: Date
+  },
+  percentOff: {
+    type: Number 
   }
  
 });

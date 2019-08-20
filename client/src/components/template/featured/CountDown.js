@@ -3,28 +3,16 @@ import Slide from 'react-reveal/Slide';
 
 
 class CountDown extends Component {
-    
-    // constructor(props) {
-    //     super(props);
-      
-        // console.log("this " + props.eventDate)
         
         state = {
-
-            // Replace this date with passed in date
-            deadline:'',
             days: 0,
             hours: 0,
             minutes: 0,
             seconds: 0
         }
-    // }
-    // getDeadline() {
-    //     console.log(this.props.eventDate);
-        
-    // }
+   
 
-        getTimeUntil(deadline){
+        getTimeUntil(){
            
             const date = this.props.eventDate
             const time = Date.parse(date) - Date.parse(new Date());
@@ -42,7 +30,7 @@ class CountDown extends Component {
                     hours,
                     minutes,
                     seconds,
-                    deadline
+                   
                     
                 })
             }
