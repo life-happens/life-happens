@@ -91,7 +91,7 @@ var url = this.props.location.pathname;
             <Pricing ticketTitle={this.state.ticketTitle} price={this.state.ticketPrice} ticketDesc={this.state.ticketDesc}/>
         </Element>
         <Element name="location">
-          <Location address={this.state.address}/>
+          <Location location={this.state.location} address={this.state.address}/>
         </Element>
         <Footer />
       </div>

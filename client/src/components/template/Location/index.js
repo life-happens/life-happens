@@ -1,12 +1,19 @@
 import React from 'react';
 import "./style.css";
 
-const Location = () => {
+
+
+const Location = (props) => {
+    const location = props.location;
+    const address = props.address;
+const URL = "https://maps.google.com/maps?q="+location+address+"&hl=es;z=14&amp;&output=svembed"
+    console.log(location +" "+ address)
+
     return (
         <div className="location_wrapper">
             <iframe 
                 title="map"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1744.2946680937569!2d-81.30281782202071!3d29.029145287069134!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe4b6a9f2d4f9f3d!2sAbbey+Bar!5e0!3m2!1sen!2sus!4v1563374106843!5m2!1sen!2sus" 
+                src={URL}
                 width="100%" 
                 height="500px" 
                 frameBorder="0" 
@@ -20,3 +27,31 @@ const Location = () => {
 };
 
 export default Location;
+
+// import React, { Component } from 'react';
+// import { Map, GoogleApiWrapper } from 'google-maps-react';
+
+// const mapStyles = {
+//   width: '100%',
+//   height: '100%'
+// };
+
+// export class Location extends Component {
+//   render() {
+//     return (
+//       <Map
+//         google={this.props.google}
+//         zoom={14}
+//         style={mapStyles}
+//         initialCenter={{
+//          lat: -1.2884,
+//          lng: 36.8233
+//         }}
+//       />
+//     );
+//   }
+// }
+
+// export default GoogleApiWrapper({
+//   apiKey: 'AIzaSyDvpnM2iXcaMPP77S8boOhp09CCLY0Oh4A'
+// })(Location);
