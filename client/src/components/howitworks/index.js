@@ -30,7 +30,7 @@ function HowItWorks() {
         <Grid container justify="center" spacing={spacing}>
           <Grid item xs={2}>
             <Card className={classes.card}>
-              <i className="fas fa-calendar-day fa-5x" justifyContent="center" />
+              <i className="fas fa-calendar-day fa-5x"  />
               <h2>Create an Event</h2>
               <h3>Add an event and create a custom website using a cutting edge template.</h3>
             </Card>

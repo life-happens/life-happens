@@ -4,17 +4,20 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import "./style.css";
 import axios from 'axios';
+// import { textAlign } from "@material-ui/system";
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
+    width: "auto"
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 250
+    width:"auto",
+    justifyContent: "center"
   }
 }));
 
@@ -46,7 +49,7 @@ export default function SimpleModal() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log( values);
+   
 
     axios.post('/api/users/event', {
       name: values.eventName,
@@ -63,7 +66,7 @@ export default function SimpleModal() {
       percentOff: values.percentOff
     }, {headers: {'Accept': 'application/json'}})
     .then(function (response){
-      console.log(response);
+      console.log("Post Success!");
       
 
     })
@@ -99,10 +102,11 @@ export default function SimpleModal() {
         onClose={handleClose}
       >
         <div className="modalBackground">
-        <button onClick={handleClose} className="closeButton">X</button>
+        
           <form className={classes.container} noValidate autoComplete="off">
+          <button onClick={handleClose} className="closeButton">X</button>
             <div>
-              <h2 id="header">Create Event</h2>
+              <h2 id="header">Create An Event</h2>
             </div>
             <div>
               <TextField
@@ -170,7 +174,7 @@ export default function SimpleModal() {
               />
               <TextField
                 id="outlined-name"
-                label="Ticket Description (optional)"
+                label="Ticket Description"
                 className={classes.textField}
                 value={values.ticketDescription}
                 onChange={handleChange("ticketDescription")}
@@ -179,7 +183,7 @@ export default function SimpleModal() {
               />
               <TextField
                 id="outlined-name"
-                label="Date for Early Purchase Discount Cutoff (optional)"
+                label="Early Purchase Discount Cutoff Date"
                 className={classes.textField}
                 value={values.discDate}
                 onChange={handleChange("discDate")}
@@ -188,7 +192,7 @@ export default function SimpleModal() {
               />
               <TextField
                 id="outlined-name"
-                label="Discount Percentage for Early Purchase (optional)"
+                label="Early Purchase Discount (%)"
                 className={classes.textField}
                 value={values.percentOff}
                 onChange={handleChange("percentOff")}
@@ -216,17 +220,19 @@ export default function SimpleModal() {
                
               <TextField
                 id="outlined-multiline-static"
-                label="Description"
+                label="Event Description"
                 multiline
-                rows="6"
+                rows="4"
                 className={classes.textField}
                 value={values.description}
                 onChange={handleChange("description")}
+                width="50%"
                 margin="normal"
                 variant="outlined"
               />
-              <button onClick={handleFormSubmit}className="submitEvent ">Submit</button>
+              
             </div>
+            <button onClick={handleFormSubmit}className="submitEvent ">Submit</button>
           </form>
         </div>
       </Modal>

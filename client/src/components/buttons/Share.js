@@ -14,7 +14,7 @@ class Share extends Component {
    }
    render() {
        const shareUrl = "https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
-       const name = this.state.title;
+       const name = this.state.image + this.state.title + this.state.description;
        // const title = 'GitHub';
        return (
            <div>
@@ -32,7 +32,7 @@ class Share extends Component {
                    <EmailShareButton
                        url={shareUrl}
                        subject={name}
-                       body={this.state.image}
+                    //    body={this.state.image}
                    >
                        <EmailIcon
                            size={32}

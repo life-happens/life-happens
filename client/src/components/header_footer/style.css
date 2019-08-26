@@ -9,6 +9,7 @@ header {
 
 header .header_logo {
   flex-grow: 1;
+  text-shadow: 3px 3px #204969;
 }
 header .header_logo_venue {
   font-size: 40px;

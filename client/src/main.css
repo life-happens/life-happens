@@ -1,12 +1,15 @@
 /* jumbotron Text */
 .jumboText {
   color: white;
+  text-shadow: 3px 3px #204969;
 }
 .jumboHeader1{
   font-size: 30px;
+  text-shadow: 3px 3px #204969;
 }
 .jumboHeader2 {
   font-size: 25px;
+  text-shadow: 3px 3px #204969;
 }
 /* --------------- */
 body {
@@ -16,7 +19,8 @@ body {
 }
 
 .font_righteous {
-  font-family: "Righteous", cursive;
+  font-family: "Roboto", sans-serif;
+  text-decoration-style: none
 }
 
 .bck_black {
