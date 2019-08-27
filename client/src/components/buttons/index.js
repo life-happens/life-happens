@@ -4,12 +4,12 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import PageviewIcon from "@material-ui/icons/Pageview";
 // import ShareIcon from "@material-ui/icons/Share";
-import EditIcon from "@material-ui/icons/Create";
+
 import Tooltip from "@material-ui/core/Tooltip";
 import axios from "axios";
 import Share from "./Share";
 import moment from "moment";
-
+ import EditModal from "../modal/EditModel";
 
 
 
@@ -45,7 +45,7 @@ export default function IconButtons(props) {
   const updateEvent = () => {
     console.log(props.id);
 
-   alert(props.id + "\n " +  props.name + "\n " + moment(props.date).format('MMMM Do, YYYY') );
+   
 
     // axios call to display & update from db
   }
@@ -77,8 +77,6 @@ export default function IconButtons(props) {
           aria-label="Pageview"
           onClick={goToEvent}
           id={props.id}
-     
-
         >
           <PageviewIcon />
         </IconButton>
@@ -89,9 +87,27 @@ export default function IconButtons(props) {
           className={classes.button}
           aria-label="Create"
           onClick={updateEvent}
+          
         >
           
-          <EditIcon />
+          <EditModal
+            id={props.id}
+            name={props.name}
+            date={moment(props.date).format('MMMM Do, YYYY')}
+            time={props.time}
+            location={props.location}
+            description={props.description}
+            address={props.address}
+            ticketTitle={props.ticketTitle}
+            ticketPrice={props.ticketPrice}
+            ticketDescription={props.ticketDescription}
+            discDate={props.discDate}
+            percentOff={props.percentOff}
+            image1={[props.image1]}
+            image2={[props.image2]}
+            // image2={props.inspirationalPhoto2}
+          />
+           
         </IconButton>
       </Tooltip>
 
@@ -107,7 +123,8 @@ export default function IconButtons(props) {
             
             image={props.image}
             description={props.description} 
-            />
+            /> 
+            
         </IconButton>
       </Tooltip>
 

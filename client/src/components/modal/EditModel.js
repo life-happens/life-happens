@@ -2,8 +2,9 @@ import React from "react";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import EditIcon from "@material-ui/icons/Create";
 import "./style.css";
-import axios from 'axios';
+// import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function EditModal() {
+export default function EditModal(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     eventName: "",
@@ -47,25 +48,25 @@ export default function EditModal() {
     event.preventDefault();
     console.log( values);
 
-    axios.post('/api/users/event', {
-      name: values.eventName,
-      date: values.date,
-      time: values.time,
-      location: values.location,
-      address: values.address,
-      description: values.description,
-      inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
-      ticketPrice: values.ticketPrice,
-      ticketTitle: values.ticketTitle
-    }, {headers: {'Accept': 'application/json'}})
-    .then(function (response){
-      console.log(response);
+    // axios.post('/api/users/update', {
+    //   name: values.eventName,
+    //   date: values.date,
+    //   time: values.time,
+    //   location: values.location,
+    //   address: values.address,
+    //   description: values.description,
+    //   inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
+    //   ticketPrice: values.ticketPrice,
+    //   ticketTitle: values.ticketTitle
+    // }, {headers: {'Accept': 'application/json'}})
+    // .then(function (response){
+    //   console.log(response);
       
 
-    })
-    .catch(function (error){
-      console.log(error);
-    });
+    // })
+    // .catch(function (error){
+    //   console.log(error);
+    // });
     
     handleClose();
   }
@@ -83,9 +84,10 @@ export default function EditModal() {
   return (
     <div className="wrapper">
       <div>
-        <button className="add_event_button"type="button" onClick={handleOpen}>
-          Add Event
-        </button>
+        <EditIcon 
+        type="button" 
+        onClick={handleOpen}
+        />
       </div>
       
       <Modal
@@ -98,12 +100,13 @@ export default function EditModal() {
         <button onClick={handleClose} className="closeButton">X</button>
           <form className={classes.container} noValidate autoComplete="off">
             <div>
-              <h2 id="header">Create Event</h2>
+              <h2 id="header">Edit Event</h2>
             </div>
             <div>
               <TextField
-                id="outlined-name"
+                id="outlined-with-placeholder"
                 label="Event Name"
+                placeholder={props.name}
                 className={classes.textField}
                 value={values.eventName}
                 onChange={handleChange("eventName")}
@@ -113,6 +116,7 @@ export default function EditModal() {
               <TextField
                 id="outlined-name"
                 label="Date"
+                placeholder={props.date}
                 className={classes.textField}
                 value={values.date}
                 onChange={handleChange("date")}
@@ -122,6 +126,7 @@ export default function EditModal() {
                <TextField
                 id="outlined-name"
                 label="Time"
+                placeholder={props.time}
                 className={classes.textField}
                 value={values.time}
                 onChange={handleChange("time")}
@@ -131,6 +136,7 @@ export default function EditModal() {
                 <TextField
                 id="outlined-name"
                 label="Location Name"
+                placeholder={props.location}
                 className={classes.textField}
                 value={values.location}
                 onChange={handleChange("location")}
@@ -140,6 +146,7 @@ export default function EditModal() {
               <TextField
                 id="outlined-name"
                 label="Location Address"
+                placeholder={props.address}
                 className={classes.textField}
                 value={values.address}
                 onChange={handleChange("address")}
@@ -149,6 +156,7 @@ export default function EditModal() {
               <TextField
                 id="outlined-name"
                 label="Ticket Title"
+                placeholder={props.ticketTitle}
                 className={classes.textField}
                 value={values.ticketTitle}
                 onChange={handleChange("ticketTitle")}
@@ -158,16 +166,47 @@ export default function EditModal() {
                <TextField
                 id="outlined-name"
                 label="Ticket Price"
+                placeholder={props.ticketPrice}
                 className={classes.textField}
                 value={values.ticketPrice}
                 onChange={handleChange("ticketPrice")}
                 margin="normal"
                 variant="outlined"
               />
-             
+              <TextField
+                id="outlined-name"
+                label="Ticket Description (optional)"
+                placeholder={props.ticketDescription}
+                className={classes.textField}
+                value={values.ticketDescription}
+                onChange={handleChange("ticketDescription")}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Date for Early Purchase Discount Cutoff (optional)"
+                placeholder={props.discDate}
+                className={classes.textField}
+                value={values.discDate}
+                onChange={handleChange("discDate")}
+                margin="normal"
+                variant="outlined"
+              />
+              <TextField
+                id="outlined-name"
+                label="Discount Percentage for Early Purchase (optional)"
+                placeholder={props.percentOff}
+                className={classes.textField}
+                value={values.percentOff}
+                onChange={handleChange("percentOff")}
+                margin="normal"
+                variant="outlined"
+              />
               <TextField
                 id="outlined-name"
                 label="Image URL"
+                placeholder={props.image2[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto1}
                 onChange={handleChange("inspirationalPhoto1")}
@@ -177,6 +216,7 @@ export default function EditModal() {
                  <TextField
                 id="outlined-name"
                 label="Image URL"
+                placeholder={props.image1[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto2}
                 onChange={handleChange("inspirationalPhoto2")}
@@ -187,6 +227,7 @@ export default function EditModal() {
               <TextField
                 id="outlined-multiline-static"
                 label="Description"
+                placeholder={props.description}
                 multiline
                 rows="6"
                 className={classes.textField}
@@ -195,7 +236,7 @@ export default function EditModal() {
                 margin="normal"
                 variant="outlined"
               />
-              <button onClick={handleFormSubmit}className="submitEvent ">Submit</button>
+              <button onClick={handleFormSubmit}className="submitEvent ">Save</button>
             </div>
           </form>
         </div>
