@@ -144,7 +144,6 @@ app.get('/api/users/events/', auth, function (req, res) {
 // event Delete
 app.get('/api/users/events/:id', auth, function (req, res) {
 
-  
   Event.findById({ _id: req.params.id })
    .then(dbModel => {dbModel.remove()})
     .then(dbModel => res.json(dbModel))
@@ -152,6 +151,12 @@ app.get('/api/users/events/:id', auth, function (req, res) {
    .catch(err => res.status(422).json(err));
 
 });
+
+// Event Update
+// app.get('/api/users/update/:id', auth, function (req, res) {
+//     Event.findOneAndUpdate({_id: req.params.id })
+//     .then()  
+// });
 
 // Default
 

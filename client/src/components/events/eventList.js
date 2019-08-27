@@ -32,7 +32,17 @@ class EventList extends Component {
                   date={event.date}
                   name={event.name}
                   description={event.description}
-                  // onClick={com}
+                  image1={event.inspirationalPhoto[0]}
+                  image2={event.inspirationalPhoto[1]}
+                  time={event.time}
+                  location={event.location}
+                  address={event.address}
+                  ticketPrice={event.ticketPrice}
+                  ticketTitle={event.ticketTitle}
+                  ticketDescription={event.ticketDescription}
+                  discDate={event.discDate}
+                  percentOff={event.percentOff}
+                 
                 />
               </div>
             </ol>{" "}

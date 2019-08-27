@@ -13,8 +13,9 @@ class Share extends Component {
        }
    }
    render() {
-       const shareUrl = "https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
-       const name = this.state.image + this.state.title + this.state.description;
+       const shareUrl ="https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
+       const name = this.state.image + " " + this.state.title + "\n" + this.state.description;
+        
        // const title = 'GitHub';
        return (
            <div>
@@ -23,6 +24,7 @@ class Share extends Component {
                        url={shareUrl}
                        quote={name}
                    >
+                       
                        <FacebookIcon
                            size={32}
                            round />
