@@ -14,7 +14,7 @@ class Share extends Component {
    }
    render() {
        const shareUrl ="https://eventize-123.herokuapp.com/user/event/page/" + this.state.id;
-       const name = this.state.image + " " + this.state.title + "\n" + this.state.description;
+       const name = this.state.title + "\n" + this.state.description;
         
        // const title = 'GitHub';
        return (

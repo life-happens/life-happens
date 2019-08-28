@@ -32,7 +32,7 @@ class Pricing extends Component {
                         </div>
                         <div className="pricing_buttons">
                             <Paypal
-                                toPay={this.state.price}
+                                toPay={this.props.price}
                                 transactionError={(data)=> this.transactionError(data)}
                                 transactionCanceled={(data)=> this.transactionCanceled(data)}
                                 onSuccess={(data)=> this.transactionSuccess(data)}
