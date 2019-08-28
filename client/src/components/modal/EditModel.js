@@ -28,7 +28,7 @@ export default function EditModal(props) {
     location: props.location,
     address: props.address,
     description: props.description,
-    inspirationalPhoto: [],
+    inspirationalPhoto: [props.image1, props.image2],
     discDate: props.discDate,
     percentOff: props.discDate,
     ticketPrice: props.ticketPrice,
@@ -208,7 +208,7 @@ export default function EditModal(props) {
               <TextField
                 id="outlined-name"
                 label="Image URL"
-                placeholder={props.image2[0]}
+                placeholder={props.image1[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto1}
                 onChange={handleChange("inspirationalPhoto1")}
@@ -218,7 +218,7 @@ export default function EditModal(props) {
                  <TextField
                 id="outlined-name"
                 label="Image URL"
-                placeholder={props.image1[0]}
+                placeholder={props.image2[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto2}
                 onChange={handleChange("inspirationalPhoto2")}
