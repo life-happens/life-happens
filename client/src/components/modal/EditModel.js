@@ -22,17 +22,18 @@ const useStyles = makeStyles(theme => ({
 export default function EditModal(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    eventName: "",
-    date: "",
-    time: "",
-    location: "",
-    address: "",
-    description: "",
+    eventName: props.name,
+    date: props.date,
+    time: props.time,
+    location: props.location,
+    address: props.address,
+    description: props.description,
     inspirationalPhoto: [],
-    discDate: "",
-    percentOff: "",
-    ticketPrice: [],
-    ticketTitle: []
+    discDate: props.discDate,
+    percentOff: props.discDate,
+    ticketPrice: props.ticketPrice,
+    ticketTitle: props.ticketTitle,
+    ticketDescription: props.ticketDescription
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -48,7 +49,7 @@ export default function EditModal(props) {
     event.preventDefault();
     console.log( values);
 
-    // axios.post('/api/users/update', {
+    // axios.put('/api/users/update/' + props.id, {
     //   name: values.eventName,
     //   date: values.date,
     //   time: values.time,
@@ -57,7 +58,8 @@ export default function EditModal(props) {
     //   description: values.description,
     //   inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
     //   ticketPrice: values.ticketPrice,
-    //   ticketTitle: values.ticketTitle
+    //   ticketTitle: values.ticketTitle,
+    //   ticketDescription: values.ticketDescription
     // }, {headers: {'Accept': 'application/json'}})
     // .then(function (response){
     //   console.log(response);
@@ -236,7 +238,7 @@ export default function EditModal(props) {
                 margin="normal"
                 variant="outlined"
               />
-              <button onClick={handleFormSubmit}className="submitEvent ">Save</button>
+              <button onClick={handleFormSubmit}className="submitEvent ">Save Changes</button>
             </div>
           </form>
         </div>

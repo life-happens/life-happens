@@ -153,9 +153,11 @@ app.get('/api/users/events/:id', auth, function (req, res) {
 });
 
 // Event Update
+
 // app.get('/api/users/update/:id', auth, function (req, res) {
-//     Event.findOneAndUpdate({_id: req.params.id })
-//     .then()  
+//     Event.findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbEvent => res.json(dbEvent))  
+//     .catch(err => res.status(422).json(err));
 // });
 
 // Default

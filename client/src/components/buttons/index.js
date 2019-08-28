@@ -101,7 +101,7 @@ export default function IconButtons(props) {
             ticketTitle={props.ticketTitle}
             ticketPrice={props.ticketPrice}
             ticketDescription={props.ticketDescription}
-            discDate={props.discDate}
+            discDate={moment(props.discDate).format('MMMM Do, YYYY')}
             percentOff={props.percentOff}
             image1={[props.image1]}
             image2={[props.image2]}
