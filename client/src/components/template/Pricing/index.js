@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import MyButton from "../utils/MyButton";
+// import MyButton from "../utils/MyButton";
 import Zoom from "react-reveal/Zoom";
 import "./style.css";
+
+// 
+import Paypal from "../utils/paypal"
 
 class Pricing extends Component {
     
@@ -28,12 +31,13 @@ class Pricing extends Component {
                             <span>{this.props.ticketDesc}</span>
                         </div>
                         <div className="pricing_buttons">
-                            <MyButton
-                                text="Purchase"
-                                bck="#ffa800"
-                                color="#fff"
-                                link={this.state.linkto[i]}
+                            <Paypal
+                                toPay={this.state.price}
+                                transactionError={(data)=> this.transactionError(data)}
+                                transactionCanceled={(data)=> this.transactionCanceled(data)}
+                                onSuccess={(data)=> this.transactionSuccess(data)}
                             />
+                            
                         </div>
                     </div>
                 </div>
@@ -41,6 +45,17 @@ class Pricing extends Component {
         ))
     )
 
+    transactionError = () => {
+
+    }
+    
+    transactionCanceled = () => {
+        
+    } 
+
+    transactionSuccess = () => {
+        alert("Success!!")
+    }
 
     render() {
         return (
