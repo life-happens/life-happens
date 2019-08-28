@@ -31,7 +31,7 @@ class Paypal extends Component {
                     env={env}
                     client={client}
                     currency={currency}
-                    total={500}
+                    total={this.props.toPay}
                     onError={onError}
                     onSuccess={onSuccess}
                     onCancel={onCancel}
@@ -44,12 +44,7 @@ class Paypal extends Component {
 
 
                 />
-                {/* <MyButton
-                    text="Purchase"
-                    bck="#ffa800"
-                    color="#fff"
-                    // link="https://checkout.stripe.com/pay/ppage_1FCT40FKnpzPB0MXS6sT3baf#fidkdWxOYHwnPyd1blpxYHZxWm9CPHY2XUhhVm9fQzxOYWgwYjA8f2lcYScpJ3dgY2B3d2B3SndsYmxrJz8nbXFxdXY%2FKip2cXdsdWArZmpoJyknaWpmZGlgJz9rcGlpKSdobGF2Jz9%2BJ2JwbGEnPydkMGY3YT0yPSg3NDVhKDFgYGYoPTY2YSgzNjI3ZzM0MjA9MWcnKSdocGxhJz8nZ2RnNzA9PDEoNDBkMCgxMGE2KGQ3Zz0oYWRjZGQxZ2Q9MzMyJykndmxhJz8nZGNjNzE1ZDIoZjI9PSgxMWE3KGRgMzQoPGFgPWA8ZzBnMTdgJ3gpJ2dgcWR2Jz9eWHgl"
-                /> */}
+               
             </div>
         );
     }
