@@ -34,7 +34,7 @@ function Examples({ children }) {
               <Typography variant="body2" color="textSecondary" component="p">
                 This is an example of an event with a countdown.
               </Typography>
-              <a href="">Demo</a>
+              <a href="https://eventize-123.herokuapp.com/user/event/page/demo">Demo</a>
             </CardContent>
           </Card>
         </Grid>

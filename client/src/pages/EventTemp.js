@@ -23,14 +23,15 @@ class EventTemp extends Component {
 
   this.state = {
 
-    date: "August 24, 2019",
+    date: "November 24, 2019",
     description: "Let your community know about your event with a professional looking website. ",
     location: "Your Event Venue",
+    address: "39 S Magnolia Ave, Orlando, FL 32801",
     eventName: "YOUR AWESOME EVENT",
     image: ["https://www.newsbugz.com/wp-content/uploads/2019/04/best-party-planner.jpg", "https://www.shutterfly.com/ideas/wp-content/uploads/2016/06/30th-birthday-party-ideas-5.jpg"],
-    discDate: "Aug 10, 2019",
+    discDate: "Oct 10, 2019",
     percentOff: 25,
-    ticketPrice: 35,
+    ticketPrice: 85,
     ticketTitle: "Single Entry",
     ticketDesc: "Description of what ticket includes"
 }
