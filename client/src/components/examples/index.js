@@ -55,7 +55,7 @@ function Examples({ children }) {
               <Typography variant="body2" color="textSecondary" component="p">
                 Advertise your event and where it is located.
               </Typography>
-              <a href="">Demo</a>
+              <a href="https://eventize-123.herokuapp.com/user/event/page/demo">Demo</a>
             </CardContent>
           </Card>
         </Grid>
