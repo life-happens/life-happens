@@ -3,6 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import ToolBar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
+import Grid from '@material-ui/core/Grid';
 
 import SideScroll from "../sidescroll";
 import "./style.css";
@@ -36,6 +37,7 @@ class Header extends Component {
 
   render() {
     return (
+      <Grid container>
       <AppBar
         position="fixed"
         style={{
@@ -64,6 +66,7 @@ class Header extends Component {
           />
         </ToolBar>
       </AppBar>
+    </Grid>
     );
   }
 }

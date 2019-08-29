@@ -15,14 +15,14 @@
 }
  
 .add_event_button {
-   display: inherit; 
-  margin-inline-start: 200px;
+   display: inline;
+  /* margin-inline-start: 200px; */
   cursor: pointer;
   text-transform: uppercase;
   padding: 10px;
   background: #204969;
   color: white;
-  margin-top: -70px;
+   margin-top: 30px; 
   font-family: "Roboto", sans-serif;
   font-size: 16px;
 }

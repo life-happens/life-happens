@@ -31,10 +31,9 @@ class Main extends Component {
           {/* <Examples /> */}
         </Element>
         <Element name="login">
-           <Login /> 
+            <Login />  
         </Element>
-        <Footer/>
-        
+         <Footer /> 
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import IconButtons from "../buttons";
 import Card from "@material-ui/core/Card";
+import Grid from '@material-ui/core/Grid';
 class EventList extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class EventList extends Component {
   }
   render() {
     return (
+      
       <ul className="eventList">
         {this.state.events.map(event => (
           <Card className="cardList">
@@ -49,6 +51,7 @@ class EventList extends Component {
           </Card>
         ))}
       </ul>
+  
     );
   }
 }

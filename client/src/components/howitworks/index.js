@@ -28,21 +28,21 @@ function HowItWorks() {
 
       <Grid container className={classes.root} spacing={2}>
         <Grid container justify="center" spacing={spacing}>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={4} lg={2}>
             <Card className={classes.card}>
               <i className="fas fa-calendar-day fa-5x"  />
               <h2>Create an Event</h2>
               <h3>Add an event and create a custom website using a cutting edge template.</h3>
             </Card>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={4} lg={2}>
             <Card className={classes.card}>
               <i className="fas fa-dollar-sign fa-5x"/>
               <h2>Add/Track Sales</h2>
               <h3>A handy tool to sell and monitor sales of your tickets.</h3>
             </Card>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} sm={6} md={4} lg={2}>
             <Card className={classes.card}>
               <i className="fas fa-user-friends fa-5x" />
               <h2>Share</h2>

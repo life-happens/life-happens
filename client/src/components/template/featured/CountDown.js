@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Slide from 'react-reveal/Slide';
 
 
+
 class CountDown extends Component {
         
         state = {
@@ -46,6 +47,7 @@ class CountDown extends Component {
         render() {
             return (
                 <Slide left delay={1000}>
+                   
                     <div className="countdown_wrapper">
                         <div className="countdown_top">
                             Event starts in
@@ -85,6 +87,7 @@ class CountDown extends Component {
                             </div>
                         </div>
                     </div>
+                  
                 </Slide>
             );
         }
