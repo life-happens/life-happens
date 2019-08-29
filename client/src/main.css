@@ -39,10 +39,10 @@ body {
   width: 900px;
   margin: 0 auto;
 }
-
+/* About */
 .aboutContainer {
   text-align: center;
-  height: 80vh;
+  /* height: 80vh; */
   justify-content: center;
   padding: 50px;
   background-color: #204969;
@@ -55,6 +55,9 @@ body {
 #aboutText {
   font-size: 26px;
 }
+/* end of About */
+
+/* Examples */
 h1 {
   text-align: center;
 }
@@ -67,6 +70,7 @@ h1 {
   font-size: 35px;
   text-decoration: underline;
 }
+/* end of Examples */
 .dash_Header {
   text-align: center;
   height: 100px;
@@ -77,3 +81,4 @@ h1 {
   font-family: "Righteous", cursive;
   text-decoration: underline;
 }
+

@@ -11,11 +11,12 @@ import Typography from "@material-ui/core/Typography";
 function Examples({ children }) {
   const [spacing] = React.useState(4);
   return (
+    <Grid>
     <div className="exampleContainer">
        <br /> 
       <h1 className="exampleHeader">Examples</h1>
       <Grid container justify="center" spacing={spacing}>
-        <Grid item xs={3}>
+        <Grid item xs={10} sm={6} md={5} lg={3}>
           <Card >
           
             <CardMedia
@@ -33,11 +34,12 @@ function Examples({ children }) {
               <Typography variant="body2" color="textSecondary" component="p">
                 This is an example of an event with a countdown.
               </Typography>
+              <a href="">Demo</a>
             </CardContent>
           </Card>
         </Grid>
         
-        <Grid item xs={3}>
+        <Grid item xs={10}sm={6} md={5} lg={3}>
           <Card>
             <CardMedia
               component="img"
@@ -53,12 +55,14 @@ function Examples({ children }) {
               <Typography variant="body2" color="textSecondary" component="p">
                 Advertise your event and where it is located.
               </Typography>
+              <a href="">Demo</a>
             </CardContent>
           </Card>
         </Grid>
       </Grid>
       <br />
     </div>
+    </Grid>
   );
 }
 export default Examples;
