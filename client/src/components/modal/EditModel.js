@@ -7,6 +7,16 @@ import "./style.css";
 // import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    height: "100vh",
+    backgroundColor: "white",
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    padding:"10px",
+    width: "900px"
+  },
   container: {
     display: "flex",
     flexWrap: "wrap",
@@ -97,8 +107,9 @@ export default function EditModal(props) {
         aria-describedby="simple-modal-description"
         open={open}
         onClose={handleClose}
+        
       >
-        <div className="modalBackground">
+        <div className={classes.root}>
         <button onClick={handleClose} className="closeButton">X</button>
           <form className={classes.container} noValidate autoComplete="off">
             <div>
