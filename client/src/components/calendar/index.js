@@ -42,7 +42,7 @@ class EventCalendar extends Component {
             defaultDate={new Date()}
             views={["month"]}
             events={this.state.events}
-            style={{ height: "300px" }}
+            style={{ height: "300px" }}          
           />
         </div>
       </Card>

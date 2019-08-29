@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 
+
 const logOutButton = () => {
   axios.get("/api/user/logout")
   .then(res => {

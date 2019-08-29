@@ -8,18 +8,21 @@ import CardContent from "@material-ui/core/CardContent";
 import EventList from "./eventList";
 import Table from "../table";
 
+
+
 function Event({ children }) {
   return (
+   
     <Grid container justify="center">
-      <Grid item xs={3}>
-        <h2 className="eventHeader"> My Events</h2>
-
+     
+      <Grid item  xs={12}lg={3}>
         <SimpleModal />
-
+        <h2 className="eventHeader"> My Events </h2>
         <EventList />
       </Grid>
+      
       <Grid item xs={1} />
-      <Grid item xs={6}>
+      <Grid item xs={12}lg={6}>
         <div className="calendar">
           <Card>
             <CardContent>
@@ -39,6 +42,7 @@ function Event({ children }) {
         </div>
       </Grid>
     </Grid>
+   
   );
 }
 export default Event;
