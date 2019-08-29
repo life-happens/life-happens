@@ -2,15 +2,15 @@ import React from "react";
 import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import EditIcon from "@material-ui/icons/Create";
 import "./style.css";
-import axios from 'axios';
+// import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   container: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-    width: "100%"
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -19,21 +19,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SimpleModal() {
+export default function EditModal(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
-    eventName: "",
-    date: "",
-    time: "",
-    location: "",
-    address: "",
-    description: "",
-    inspirationalPhoto: [],
-    discDate: "",
-    percentOff: "",
-    ticketPrice: [],
-    ticketTitle: [],
-    ticketDescription: ""
+    eventName: props.name,
+    date: props.date,
+    time: props.time,
+    location: props.location,
+    address: props.address,
+    description: props.description,
+    inspirationalPhoto: [props.image1, props.image2],
+    discDate: props.discDate,
+    percentOff: props.discDate,
+    ticketPrice: props.ticketPrice,
+    ticketTitle: props.ticketTitle,
+    ticketDescription: props.ticketDescription
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
@@ -47,29 +47,28 @@ export default function SimpleModal() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    
-    axios.post('/api/users/event', {
-      name: values.eventName,
-      date: values.date,
-      time: values.time,
-      location: values.location,
-      address: values.address,
-      description: values.description,
-      inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
-      ticketPrice: values.ticketPrice,
-      ticketTitle: values.ticketTitle,
-      ticketDescription: values.ticketDescription,
-      discDate: values.discDate,
-      percentOff: values.percentOff
-    }, {headers: {'Accept': 'application/json'}})
-    .then(function (response){
-      console.log(response);
+    console.log( values);
+
+    // axios.put('/api/users/update/' + props.id, {
+    //   name: values.eventName,
+    //   date: values.date,
+    //   time: values.time,
+    //   location: values.location,
+    //   address: values.address,
+    //   description: values.description,
+    //   inspirationalPhoto: [values.inspirationalPhoto1, values.inspirationalPhoto2],
+    //   ticketPrice: values.ticketPrice,
+    //   ticketTitle: values.ticketTitle,
+    //   ticketDescription: values.ticketDescription
+    // }, {headers: {'Accept': 'application/json'}})
+    // .then(function (response){
+    //   console.log(response);
       
 
-    })
-    .catch(function (error){
-      console.log(error);
-    });
+    // })
+    // .catch(function (error){
+    //   console.log(error);
+    // });
     
     handleClose();
   }
@@ -87,9 +86,10 @@ export default function SimpleModal() {
   return (
     <div className="wrapper">
       <div>
-        <button className="add_event_button"type="button" onClick={handleOpen}>
-          Add Event
-        </button>
+        <EditIcon 
+        type="button" 
+        onClick={handleOpen}
+        />
       </div>
       
       <Modal
@@ -102,12 +102,13 @@ export default function SimpleModal() {
         <button onClick={handleClose} className="closeButton">X</button>
           <form className={classes.container} noValidate autoComplete="off">
             <div>
-              <h2 id="header">Create Event</h2>
+              <h2 id="header">Edit Event</h2>
             </div>
             <div>
               <TextField
-                id="outlined-name"
+                id="outlined-with-placeholder"
                 label="Event Name"
+                placeholder={props.name}
                 className={classes.textField}
                 value={values.eventName}
                 onChange={handleChange("eventName")}
@@ -117,6 +118,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Date"
+                placeholder={props.date}
                 className={classes.textField}
                 value={values.date}
                 onChange={handleChange("date")}
@@ -126,6 +128,7 @@ export default function SimpleModal() {
                <TextField
                 id="outlined-name"
                 label="Time"
+                placeholder={props.time}
                 className={classes.textField}
                 value={values.time}
                 onChange={handleChange("time")}
@@ -135,6 +138,7 @@ export default function SimpleModal() {
                 <TextField
                 id="outlined-name"
                 label="Location Name"
+                placeholder={props.location}
                 className={classes.textField}
                 value={values.location}
                 onChange={handleChange("location")}
@@ -144,6 +148,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Location Address"
+                placeholder={props.address}
                 className={classes.textField}
                 value={values.address}
                 onChange={handleChange("address")}
@@ -153,6 +158,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Ticket Title"
+                placeholder={props.ticketTitle}
                 className={classes.textField}
                 value={values.ticketTitle}
                 onChange={handleChange("ticketTitle")}
@@ -162,6 +168,7 @@ export default function SimpleModal() {
                <TextField
                 id="outlined-name"
                 label="Ticket Price"
+                placeholder={props.ticketPrice}
                 className={classes.textField}
                 value={values.ticketPrice}
                 onChange={handleChange("ticketPrice")}
@@ -171,6 +178,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Ticket Description (optional)"
+                placeholder={props.ticketDescription}
                 className={classes.textField}
                 value={values.ticketDescription}
                 onChange={handleChange("ticketDescription")}
@@ -180,6 +188,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Date for Early Purchase Discount Cutoff (optional)"
+                placeholder={props.discDate}
                 className={classes.textField}
                 value={values.discDate}
                 onChange={handleChange("discDate")}
@@ -189,6 +198,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Discount Percentage for Early Purchase (optional)"
+                placeholder={props.percentOff}
                 className={classes.textField}
                 value={values.percentOff}
                 onChange={handleChange("percentOff")}
@@ -198,6 +208,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-name"
                 label="Image URL"
+                placeholder={props.image1[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto1}
                 onChange={handleChange("inspirationalPhoto1")}
@@ -207,6 +218,7 @@ export default function SimpleModal() {
                  <TextField
                 id="outlined-name"
                 label="Image URL"
+                placeholder={props.image2[0]}
                 className={classes.textField}
                 value={values.inspirationalPhoto2}
                 onChange={handleChange("inspirationalPhoto2")}
@@ -217,6 +229,7 @@ export default function SimpleModal() {
               <TextField
                 id="outlined-multiline-static"
                 label="Description"
+                placeholder={props.description}
                 multiline
                 rows="6"
                 className={classes.textField}
@@ -225,7 +238,7 @@ export default function SimpleModal() {
                 margin="normal"
                 variant="outlined"
               />
-              <button onClick={handleFormSubmit}className="submitEvent ">Submit</button>
+              <button onClick={handleFormSubmit}className="submitEvent ">Save Changes</button>
             </div>
           </form>
         </div>

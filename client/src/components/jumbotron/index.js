@@ -10,7 +10,8 @@ function Jumbotron({ children }) {
         height: 400,
         clear: "both",
         paddingTop: 120,
-        textAlign: "center"
+        textAlign: "center",
+        
       }}
       className="jumbotron font_righteous"
     >

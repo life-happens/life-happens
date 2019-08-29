@@ -21,18 +21,6 @@ app.use(cookieParser());
 app.use(express.static("client/build"));
 
 
-// app.use((req, res, next) => {
-//   res.header(
-//     "Access-Control-Allow-Origin",
-//     "https://eventize-123.herokuapp.com/"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
-
 app.get("/", function(req, res) {
  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
@@ -156,7 +144,6 @@ app.get('/api/users/events/', auth, function (req, res) {
 // event Delete
 app.get('/api/users/events/:id', auth, function (req, res) {
 
-  
   Event.findById({ _id: req.params.id })
    .then(dbModel => {dbModel.remove()})
     .then(dbModel => res.json(dbModel))
@@ -164,6 +151,14 @@ app.get('/api/users/events/:id', auth, function (req, res) {
    .catch(err => res.status(422).json(err));
 
 });
+
+// Event Update
+
+// app.get('/api/users/update/:id', auth, function (req, res) {
+//     Event.findOneAndUpdate({ _id: req.params.id }, req.body)
+//     .then(dbEvent => res.json(dbEvent))  
+//     .catch(err => res.status(422).json(err));
+// });
 
 // Default
 

@@ -217,7 +217,7 @@ render() {
                     </div>
                 </div>
                 <Dialog open={this.state.formSuccess}>
-                    <div className="dialog_reg">Welcome New User!</div>
+                    <div className="dialog_reg">Welcome, New User!</div>
                     <div className="dialog_sm">Please Login to continue</div>
 
                 </Dialog>

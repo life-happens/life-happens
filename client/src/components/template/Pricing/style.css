@@ -27,14 +27,14 @@
 }
 
 .pricing_wrapper .pricing_inner_wrapper {
-    border:2px solid #ffa800;
+    border:2px solid #4585A8;
     padding: 50px 20px;
 }
 
 .pricing_inner_wrapper .pricing_title {
     color: #ffffff;
     text-align: center;
-    border-bottom: 1px solid #ffa800;
+    border-bottom: 1px solid #4585A8;
     padding-bottom: 20px;
 }
 .pricing_inner_wrapper .pricing_title span:nth-child(1) {

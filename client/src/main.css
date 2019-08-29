@@ -1,12 +1,15 @@
 /* jumbotron Text */
 .jumboText {
   color: white;
+  text-shadow: 3px 3px #204969;
 }
 .jumboHeader1{
   font-size: 30px;
+  text-shadow: 3px 3px #204969;
 }
 .jumboHeader2 {
   font-size: 25px;
+  text-shadow: 3px 3px #204969;
 }
 /* --------------- */
 body {
@@ -16,7 +19,8 @@ body {
 }
 
 .font_righteous {
-  font-family: "Righteous", cursive;
+  font-family: "Roboto", sans-serif;
+  text-decoration-style: none
 }
 
 .bck_black {
@@ -45,15 +49,17 @@ body {
   /* height: 80vh; */
   justify-content: center;
   padding: 50px;
-  background-color: #204969;
+  
 }
 .aboutHeader {
   font-size: 40px;
   padding: 5px;
   text-decoration: underline;
+  color: #204969;
 }
 #aboutText {
   font-size: 26px;
+  color: #204969;
 }
 /* end of About */
 

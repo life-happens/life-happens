@@ -1,9 +1,9 @@
 .jumbotron {
-  background: url("https://imgs.classicfm.com/images/27377?crop=16_9&width=640&signature=lLIW1NLpZxmHU7rxuMMsKTHPG8o=");
+  background: url("../../resources/images/Events4.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   height: 600px;
- 
+
 }
 
 body {
@@ -15,5 +15,5 @@ body {
 
 .font_righteous {
   font-family: "Righteous", cursive;
-  
+  color: "#204969";
 }
