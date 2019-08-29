@@ -33,7 +33,8 @@ class Main extends Component {
         <Element name="login">
            <Login /> 
         </Element>
-        <Footer />
+        <Footer/>
+        
       </div>
     );
   }
