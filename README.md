@@ -13,5 +13,8 @@ Eventize is your resource to advertise, promote, and sell tickets for an upcomin
 * MongoDB
 * Express Server
 * Node.js
-* 
-*
+* Material UI
+* React Big Calendar
+* React Tables
+
+https://eventize-123.herokuapp.com/
