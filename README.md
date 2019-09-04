@@ -18,4 +18,4 @@ Eventize is your resource to advertise, promote, and sell tickets for an upcomin
 * React Tables
 
 https://eventize-123.herokuapp.com/
-![](../src/resources/images/eventize.png)
+![](./client/src/resources/images/eventize.png)
